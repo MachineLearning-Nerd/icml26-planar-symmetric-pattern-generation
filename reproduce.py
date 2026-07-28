@@ -15,6 +15,7 @@ import time
 from pathlib import Path
 
 from repro.baseline import run_baseline
+from repro.claim2_proof import verify_claim_2
 
 
 ROOT = Path(__file__).resolve().parent
@@ -45,6 +46,10 @@ def main() -> int:
     baseline = run_baseline(config["seed"])
     report["claims"].update(baseline["claims"])
     report["negative_controls"] = baseline["negative_controls"]
+    if config["stage"] != "judged_baseline":
+        claim_2, claim_2_controls = verify_claim_2()
+        report["claims"]["claim_2"] = claim_2
+        report["negative_controls"]["claim_2_proof_certificate"] = claim_2_controls
     report["runtime_seconds"] = time.perf_counter() - started
     report["release_gate"] = {
         "previously_full_credit_regression_pass": all(

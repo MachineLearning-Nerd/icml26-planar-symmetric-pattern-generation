@@ -1,8 +1,8 @@
 {
-  "stage": "judged_baseline",
+  "stage": "claim2_proof",
   "seed": 20260728,
   "estimated_scientific_cores": 1,
   "selected_backend": "hf",
   "selected_flavor": "cpu-upgrade",
-  "reason": "The numerical verifier is single-core and short; first locked-environment synchronization has uncertain runtime."
+  "reason": "The symbolic proof-certificate verifier is single-core and short; remote environment synchronization remains runtime-uncertain."
 }

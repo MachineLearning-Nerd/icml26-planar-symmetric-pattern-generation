@@ -1,0 +1,77 @@
+{
+  "certificate_version": 1,
+  "source_sha256": "0d9de93e9af7441ac803837bf4bebceed7d890b015ea4c194bad5dd414921d55",
+  "theorem": "Theorem 3.3",
+  "quantifiers": [
+    "there exist r fixed G-invariant eta_i",
+    "for every f in C_G(R^2)",
+    "for every epsilon > 0",
+    "there exist h_i in C_Wa(R^2)",
+    "the unit-cell L1 error is strictly below epsilon"
+  ],
+  "steps": [
+    {
+      "id": "compact_torus",
+      "depends_on": [],
+      "statement": "A unit cell modulo the translation lattice is a compact torus of finite positive measure."
+    },
+    {
+      "id": "trigonometric_density",
+      "depends_on": ["compact_torus"],
+      "statement": "The real trigonometric polynomial algebra contains constants, separates points, and is closed under conjugation; Stone-Weierstrass gives uniform density in continuous periodic functions."
+    },
+    {
+      "id": "reynolds_projection",
+      "depends_on": ["trigonometric_density"],
+      "statement": "For a G-invariant f, Reynolds averaging any uniform approximant q gives q_G in P_torus^G and ||f-q_G||_infinity <= ||f-q||_infinity."
+    },
+    {
+      "id": "hironaka_free_module",
+      "depends_on": ["reynolds_projection"],
+      "statement": "P_torus^G is a free module of rank r=[Wa:G] over P_torus^Wa with fixed G-invariant module basis eta_1,...,eta_r."
+    },
+    {
+      "id": "exact_polynomial_decomposition",
+      "depends_on": ["hironaka_free_module"],
+      "statement": "The invariant polynomial q_G decomposes exactly as sum_i p_i eta_i with p_i in P_torus^Wa, hence continuous Wa-invariant h_i=p_i."
+    },
+    {
+      "id": "l1_from_uniform",
+      "depends_on": ["exact_polynomial_decomposition"],
+      "statement": "The unit-cell L1 error is at most |Omega| times the uniform error."
+    },
+    {
+      "id": "arbitrary_epsilon",
+      "depends_on": ["l1_from_uniform"],
+      "statement": "Choosing the pre-averaging uniform error below epsilon/(2|Omega|) yields strict L1 error below epsilon for every epsilon>0."
+    }
+  ],
+  "bound_certificate": {
+    "unit_cell_measure_symbolic_value": 7.0,
+    "epsilon_test_value": 0.125,
+    "delta_multiplier": 0.5,
+    "reynolds_operator_norm_bound": 1.0,
+    "exact_decomposition_error": 0.0,
+    "note": "Positive numerical representatives machine-check the symbolic inequality; the derivation uses symbols epsilon and |Omega|."
+  },
+  "planar_basis_ranks": {
+    "p1": 4,
+    "p2": 2,
+    "pm": 2,
+    "pg": 4,
+    "cm": 4,
+    "p2mm": 1,
+    "p2mg": 2,
+    "p2gg": 4,
+    "c2mm": 2,
+    "p4": 2,
+    "p4mm": 1,
+    "p4gm": 4,
+    "p3": 4,
+    "p3m1": 2,
+    "p31m": 2,
+    "p6": 2,
+    "p6mm": 1
+  },
+  "noncircularity": "No target, sample, basis budget, tolerance, or fit result is selected from an observed error. The proof chooses a uniform approximation tolerance from epsilon and finite cell measure before constructing the approximant."
+}
