@@ -16,6 +16,7 @@ from pathlib import Path
 
 from repro.baseline import run_baseline
 from repro.claim2_proof import verify_claim_2
+from repro.claim5_vtm import verify_claim_5
 
 
 ROOT = Path(__file__).resolve().parent
@@ -50,6 +51,10 @@ def main() -> int:
         claim_2, claim_2_controls = verify_claim_2()
         report["claims"]["claim_2"] = claim_2
         report["negative_controls"]["claim_2_proof_certificate"] = claim_2_controls
+    if config["stage"].startswith("claim5_vtm"):
+        claim_5, claim_5_controls = verify_claim_5(config)
+        report["claims"]["claim_5"] = claim_5
+        report["negative_controls"]["claim_5_vtm"] = claim_5_controls
     report["runtime_seconds"] = time.perf_counter() - started
     report["release_gate"] = {
         "previously_full_credit_regression_pass": all(
@@ -65,7 +70,15 @@ def main() -> int:
     print("=== OPENRESEARCH_EVIDENCE_JSON_BEGIN ===")
     print(json.dumps(report, indent=2, sort_keys=True))
     print("=== OPENRESEARCH_EVIDENCE_JSON_END ===")
-    ok = report["release_gate"]["previously_full_credit_regression_pass"]
+    current_claims_pass = all(
+        report["claims"][key]["status"] == "VERIFIED"
+        for key in ("claim_1", "claim_2", "claim_3", "claim_4", "claim_5")
+    )
+    report["release_gate"]["current_claims_pass"] = current_claims_pass
+    ok = (
+        report["release_gate"]["previously_full_credit_regression_pass"]
+        and current_claims_pass
+    )
     if not ok:
         print("REGRESSION FAILURE: a previously full-credit claim did not pass", file=sys.stderr)
     return 0 if ok else 1
