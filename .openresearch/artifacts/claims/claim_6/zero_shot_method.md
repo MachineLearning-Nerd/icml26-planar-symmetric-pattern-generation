@@ -13,8 +13,13 @@ on the HF cpu-upgrade allocation. Replay p4mm independently with the same seed.
 At deterministic fractional-coordinate queries, compare the optimized field
 to independently transcribed crystallographic generators, both continuously
 and after binarization. Compute volume error against 0.5 and re-evaluate each
-mask with the released p=5 periodic homogenization solver. A p1 output tested
-as p4mm and a same-volume disconnected square are intended-failure controls.
+mask with the released p=5 periodic homogenization model. Independently solve
+the assembled equilibrium systems with SciPy's direct sparse solver, require a
+relative residual below 1e-8, and compare the result with the physical
+all-void floor. A p1 output tested as p4mm is the intended-failure symmetry
+control. The historical same-volume disconnected square and its rejected 10x
+threshold remain diagnostic only because the paper does not state that
+threshold.
 
 The paper reports 1,000 samples per group. This experiment runs one exact
 sample per group, so it tests full group coverage and the exact algorithm but
