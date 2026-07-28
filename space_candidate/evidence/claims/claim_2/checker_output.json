@@ -1,0 +1,17 @@
+{
+  "verifier_exit_code": 0,
+  "all_checks_pass": true,
+  "checks": [
+    "source_hash_bound",
+    "exact_main_quantifiers",
+    "proof_dag_exact",
+    "finite_positive_measure",
+    "arbitrary_positive_epsilon_instance",
+    "reynolds_is_contractive",
+    "hironaka_decomposition_exact",
+    "strict_l1_budget",
+    "epsilon_choice_is_formula_independent_of_target",
+    "complete_planar_rank_ledger",
+    "noncircular_derivation"
+  ]
+}

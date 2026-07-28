@@ -1,0 +1,7 @@
+{
+  "claim": "For f(x)=sum_i h_i(x) eta_i(x), Wa-invariant h_i and G-invariant eta_i imply G-invariant f.",
+  "source": "Equation 3, Section 3.1",
+  "domain": "all 17 planar groups in the paper ledger",
+  "acceptance": "maximum independently evaluated invariance error below 1e-12 for every group",
+  "verdicts": ["VERIFIED", "FALSIFIED", "BLOCKED"]
+}

@@ -1,0 +1,24 @@
+{
+  "all_required_controls_pass": true,
+  "homogenization": {
+    "omitting_area_normalization_rejected": true,
+    "opposite_adjoint_direction_reduces_bulk": true,
+    "single_pixel_symmetry_break_rejected": true
+  },
+  "theorem_b9": {
+    "missing_dual_cubic_class_rejected": true,
+    "singular_duality_form_rejected": true,
+    "wrong_maximal_group_order_rejected": true
+  },
+  "zero_shot": {
+    "p1_output_rejected_as_p4mm": true,
+    "p1_as_p4mm_binary_mismatch": 0.44160178303718567,
+    "void_phase_rejected_as_structurally_performant": true,
+    "generated_to_void_median_bulk_ratio": 2.51118000331759,
+    "deterministic_p4mm_replay": true
+  },
+  "historical_rejected_baseline": {
+    "invented_10x_disconnected_square_threshold_passed": false,
+    "reason_rejected": "Figure 8 does not state this threshold; the run is retained as historical evidence and is not the current verifier."
+  }
+}

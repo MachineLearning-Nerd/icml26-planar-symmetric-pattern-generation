@@ -1,0 +1,15 @@
+{
+  "status": "VERIFIED",
+  "source_run_id": "be3f0b80-0cad-420e-a04b-fbe56ce5c7e5",
+  "git_sha": "ccf8fe2598f08cf010ed20ea63e266a36b5641b4",
+  "groups_checked": 17,
+  "all_point_groups_are_subgroups": true,
+  "all_conjugation_recoveries_pass": true,
+  "groups": {
+    "p1": "D2", "p2": "D2", "pm": "D2", "pg": "D2",
+    "cm": "D2", "p2mm": "D2", "p2mg": "D2", "p2gg": "D2",
+    "c2mm": "D2", "p4": "D4", "p4mm": "D4", "p4gm": "D4",
+    "p3": "D6", "p3m1": "D6", "p31m": "D6", "p6": "D6",
+    "p6mm": "D6"
+  }
+}

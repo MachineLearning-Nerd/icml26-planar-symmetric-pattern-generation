@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500" viewBox="0 0 960 500">
+  <rect width="960" height="500" fill="#0f172a"/>
+  <text x="48" y="54" fill="#f8fafc" font-family="Arial,sans-serif" font-size="28" font-weight="700">Zero-shot mechanism passes; population claim remains BLOCKED</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="50" y="92" width="548" height="330" rx="14" fill="#172554" stroke="#3b82f6"/>
+    <text x="76" y="130" fill="#bfdbfe" font-size="18" font-weight="700">Exact 300-step replay, seed 42</text>
+    <g fill="#22c55e">
+      <rect x="78" y="162" width="72" height="42" rx="7"/><rect x="164" y="162" width="72" height="42" rx="7"/>
+      <rect x="250" y="162" width="72" height="42" rx="7"/><rect x="336" y="162" width="72" height="42" rx="7"/>
+      <rect x="422" y="162" width="72" height="42" rx="7"/><rect x="508" y="162" width="62" height="42" rx="7"/>
+      <rect x="78" y="218" width="72" height="42" rx="7"/><rect x="164" y="218" width="72" height="42" rx="7"/>
+      <rect x="250" y="218" width="72" height="42" rx="7"/><rect x="336" y="218" width="72" height="42" rx="7"/>
+      <rect x="422" y="218" width="72" height="42" rx="7"/><rect x="508" y="218" width="62" height="42" rx="7"/>
+    </g>
+    <g fill="#052e16" font-size="13" text-anchor="middle">
+      <text x="114" y="188">p1</text><text x="200" y="188">p2</text><text x="286" y="188">pm</text><text x="372" y="188">pg</text><text x="458" y="188">cm</text><text x="539" y="188">p2mm</text>
+      <text x="114" y="244">p2mg</text><text x="200" y="244">p2gg</text><text x="286" y="244">c2mm</text><text x="372" y="244">p4</text><text x="458" y="244">p4mm</text><text x="539" y="244">p4gm</text>
+    </g>
+    <text x="76" y="302" fill="#dbeafe" font-size="15">12/12 unique · volume MAE 1.2126% · max binary mismatch 0.2225%</text>
+    <text x="76" y="331" fill="#dbeafe" font-size="15">direct residual ≤ 3.25e-9 · p4mm replay hash exact</text>
+    <text x="76" y="360" fill="#fca5a5" font-size="15">released CG residual reaches 0.380; preserved as limitation</text>
+    <text x="76" y="393" fill="#93c5fd" font-size="14">Mechanism status: VERIFIED</text>
+    <rect x="635" y="92" width="275" height="330" rx="14" fill="#451a03" stroke="#f97316"/>
+    <text x="772" y="135" text-anchor="middle" fill="#fed7aa" font-size="20" font-weight="700">Paper population</text>
+    <text x="772" y="193" text-anchor="middle" fill="#fff7ed" font-size="44" font-weight="700">1 / 1,000</text>
+    <text x="772" y="226" text-anchor="middle" fill="#fdba74" font-size="16">samples per group run</text>
+    <text x="772" y="286" text-anchor="middle" fill="#fff7ed" font-size="29" font-weight="700">≥ 20.27 days</text>
+    <text x="772" y="315" text-anchor="middle" fill="#fdba74" font-size="14">checked 64-vCPU lower bound</text>
+    <text x="772" y="376" text-anchor="middle" fill="#fecaca" font-size="19" font-weight="700">Overall: BLOCKED</text>
+    <text x="48" y="465" fill="#94a3b8" font-size="14">No population diversity or “strong performance” distribution conclusion is inferred from the scoped calibration.</text>
+  </g>
+</svg>

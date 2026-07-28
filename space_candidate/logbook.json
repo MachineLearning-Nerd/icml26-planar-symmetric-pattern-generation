@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "title": "Repro - Planar Symmetric Pattern Generation",
+  "emoji": "🎯",
+  "space_id": "DineshAI/nbU2LNYdZN",
+  "paper": "arXiv:2606.02073",
+  "tags": ["icml2026-repro", "paper-nbU2LNYdZN"],
+  "updated_at": "2026-07-28T20:05:45+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Current claim-by-claim verification",
+    "file": "pages/index.md",
+    "children": [
+      {"slug": "claim-1", "title": "Claim 1 — conjugation", "file": "pages/claim-1/page.md", "children": []},
+      {"slug": "claim-2", "title": "Claim 2 — universal approximation", "file": "pages/claim-2/page.md", "children": []},
+      {"slug": "claim-3", "title": "Claim 3 — decomposition", "file": "pages/claim-3/page.md", "children": []},
+      {"slug": "claim-4", "title": "Claim 4 — generation", "file": "pages/claim-4/page.md", "children": []},
+      {"slug": "claim-5", "title": "Claim 5 — VTM connectivity", "file": "pages/claim-5/page.md", "children": []},
+      {"slug": "claim-6", "title": "Claim 6 — mechanics and zero-shot", "file": "pages/claim-6/page.md", "children": []},
+      {"slug": "release", "title": "Forecast and visibility", "file": "pages/release/page.md", "children": []},
+      {"slug": "verify", "title": "Historical rejected baseline — verify", "file": "pages/verify/page.md", "children": []},
+      {"slug": "overview", "title": "Historical rejected baseline — overview", "file": "pages/overview/page.md", "children": []}
+    ]
+  },
+  "agent_view_tokens": 4000,
+  "revision": "candidate-awaiting-publication",
+  "judge_status": "awaiting_judge"
+}

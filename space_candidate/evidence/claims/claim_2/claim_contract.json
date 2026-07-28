@@ -1,0 +1,21 @@
+{
+  "claim_id": 2,
+  "verdict_target": "VERIFIED",
+  "statement": "Let r=|Wa/G| and Omega be a unit cell. There exist r fixed G-invariant basis functions eta_i such that, for every f in C_G(R^2) and every epsilon>0, there exist h_i in C_Wa(R^2) whose unit-cell L1 approximation error is strictly below epsilon.",
+  "source_anchor": "https://ar5iv.labs.arxiv.org/html/2606.02073#S3.Thmtheorem3",
+  "assumptions": [
+    "G is a planar crystallographic group after the conjugation of Theorem 3.2",
+    "G is a subgroup of an affine reflection group Wa",
+    "Omega is one compact finite-measure unit cell",
+    "the Hironaka decomposition makes P_torus^G a free rank-[Wa:G] module over P_torus^Wa",
+    "trigonometric polynomials are uniformly dense in continuous periodic functions"
+  ],
+  "quantifier_order": [
+    "there exist fixed eta_i",
+    "for every continuous G-invariant f",
+    "for every epsilon>0",
+    "there exist continuous Wa-invariant h_i"
+  ],
+  "pass_condition": "Every symbolic proof obligation passes and three independent certificate corruptions are rejected.",
+  "noncircularity": "No finite target or observed error selects the tolerance, basis count, or conclusion."
+}

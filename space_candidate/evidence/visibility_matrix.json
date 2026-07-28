@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "canonical_entrypoint": "pages/index.md",
+  "required_boolean_fields": [
+    "code_visible",
+    "data_inline",
+    "raw_link",
+    "checker",
+    "control",
+    "exact_claim_tested",
+    "assumptions_audited",
+    "limitations_visible",
+    "command_environment_visible"
+  ],
+  "claims": [
+    {
+      "claim": 1,
+      "canonical_page": "pages/claim-1/page.md",
+      "code_visible": true,
+      "data_inline": true,
+      "raw_link": true,
+      "checker": true,
+      "control": true,
+      "exact_claim_tested": true,
+      "assumptions_audited": true,
+      "limitations_visible": true,
+      "command_environment_visible": true,
+      "reviewer_verdict": "VERIFIED"
+    },
+    {
+      "claim": 2,
+      "canonical_page": "pages/claim-2/page.md",
+      "code_visible": true,
+      "data_inline": true,
+      "raw_link": true,
+      "checker": true,
+      "control": true,
+      "exact_claim_tested": true,
+      "assumptions_audited": true,
+      "limitations_visible": true,
+      "command_environment_visible": true,
+      "reviewer_verdict": "VERIFIED"
+    },
+    {
+      "claim": 3,
+      "canonical_page": "pages/claim-3/page.md",
+      "code_visible": true,
+      "data_inline": true,
+      "raw_link": true,
+      "checker": true,
+      "control": true,
+      "exact_claim_tested": true,
+      "assumptions_audited": true,
+      "limitations_visible": true,
+      "command_environment_visible": true,
+      "reviewer_verdict": "VERIFIED"
+    },
+    {
+      "claim": 4,
+      "canonical_page": "pages/claim-4/page.md",
+      "code_visible": true,
+      "data_inline": true,
+      "raw_link": true,
+      "checker": true,
+      "control": true,
+      "exact_claim_tested": true,
+      "assumptions_audited": true,
+      "limitations_visible": true,
+      "command_environment_visible": true,
+      "reviewer_verdict": "VERIFIED"
+    },
+    {
+      "claim": 5,
+      "canonical_page": "pages/claim-5/page.md",
+      "code_visible": true,
+      "data_inline": true,
+      "raw_link": true,
+      "checker": true,
+      "control": true,
+      "exact_claim_tested": true,
+      "assumptions_audited": true,
+      "limitations_visible": true,
+      "command_environment_visible": true,
+      "reviewer_verdict": "VERIFIED"
+    },
+    {
+      "claim": 6,
+      "canonical_page": "pages/claim-6/page.md",
+      "code_visible": true,
+      "data_inline": true,
+      "raw_link": true,
+      "checker": true,
+      "control": true,
+      "exact_claim_tested": true,
+      "assumptions_audited": true,
+      "limitations_visible": true,
+      "command_environment_visible": true,
+      "reviewer_verdict": "BLOCKED"
+    }
+  ]
+}

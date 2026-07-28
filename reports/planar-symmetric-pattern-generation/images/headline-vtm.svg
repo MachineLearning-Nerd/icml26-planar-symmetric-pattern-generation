@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480">
+  <rect width="960" height="480" fill="#0b1020"/>
+  <text x="54" y="62" fill="#f8fafc" font-family="Arial,sans-serif" font-size="30" font-weight="700">VTM separates connected material from periodic islands</text>
+  <text x="54" y="96" fill="#94a3b8" font-family="Arial,sans-serif" font-size="17">Paper-native 128×128 Q1 solve · p4mm · independent flood-fill oracle</text>
+  <rect x="72" y="142" width="78" height="218" rx="8" fill="#22c55e"/>
+  <rect x="318" y="142" width="518" height="218" rx="8" fill="#f97316"/>
+  <text x="111" y="392" text-anchor="middle" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="18">connected</text>
+  <text x="577" y="392" text-anchor="middle" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="18">periodic islands</text>
+  <text x="111" y="244" text-anchor="middle" fill="#052e16" font-family="Arial,sans-serif" font-size="23" font-weight="700">1.947</text>
+  <text x="577" y="244" text-anchor="middle" fill="#431407" font-family="Arial,sans-serif" font-size="31" font-weight="700">781.305</text>
+  <text x="577" y="282" text-anchor="middle" fill="#431407" font-family="Arial,sans-serif" font-size="20">401.2× hotter</text>
+  <text x="111" y="328" text-anchor="middle" fill="#dcfce7" font-family="Arial,sans-serif" font-size="16">0 unreachable cells</text>
+  <text x="577" y="328" text-anchor="middle" fill="#ffedd5" font-family="Arial,sans-serif" font-size="16">1,936 unreachable cells</text>
+  <text x="54" y="447" fill="#64748b" font-family="Arial,sans-serif" font-size="15">Both systems: residual &lt; 4.54e-7 · symmetry and periodicity error 0 · scores independently recomputed</text>
+</svg>

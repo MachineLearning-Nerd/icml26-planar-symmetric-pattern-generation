@@ -1,0 +1,12 @@
+{
+  "fixed_command": "uv run --frozen python reproduce.py",
+  "python": "3.12.12",
+  "environment": "repository .venv from uv.lock",
+  "dedicated_run_id": "f79c9162-8380-4bf8-9db9-b46e09c6bd57",
+  "cumulative_run_id": "be3f0b80-0cad-420e-a04b-fbe56ce5c7e5",
+  "backend": "hf",
+  "flavor": "cpu-upgrade",
+  "estimated_claim_cores": 1,
+  "actual_job_vcpus": 64,
+  "dedicated_scientific_runtime_seconds": 0.332529
+}

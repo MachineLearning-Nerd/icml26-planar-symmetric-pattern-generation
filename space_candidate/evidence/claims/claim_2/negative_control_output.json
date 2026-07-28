@@ -1,0 +1,11 @@
+{
+  "all_negative_controls_pass": true,
+  "controls": {
+    "missing_hironaka_step_rejected": ["proof_dag_exact"],
+    "wrong_planar_rank_rejected": ["complete_planar_rank_ledger"],
+    "excess_uniform_tolerance_rejected": [
+      "strict_l1_budget",
+      "epsilon_choice_is_formula_independent_of_target"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "claim": "Algorithm 1 generates patterns satisfying each of the 17 planar symmetries.",
+  "source": "Section 6.1, Algorithm 1",
+  "domain": "all 17 groups in the paper ledger",
+  "acceptance": "maximum action error below 1e-12 for every group",
+  "verdicts": ["VERIFIED", "FALSIFIED", "BLOCKED"]
+}

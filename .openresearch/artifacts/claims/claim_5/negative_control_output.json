@@ -1,0 +1,17 @@
+{
+  "all_negative_controls_pass": true,
+  "controls": {
+    "disconnected_periodic_islands_fail_connectivity": {
+      "unreachable_material_cells": 1936,
+      "passes": true
+    },
+    "single_pixel_p4mm_break_rejected": {
+      "observed_error": 0.949999988079071,
+      "passes": true
+    },
+    "single_pixel_periodicity_break_rejected": {
+      "observed_error": 0.949999988079071,
+      "passes": true
+    }
+  }
+}

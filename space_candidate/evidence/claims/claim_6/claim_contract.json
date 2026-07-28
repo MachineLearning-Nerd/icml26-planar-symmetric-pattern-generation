@@ -1,0 +1,20 @@
+{
+  "claim_id": 6,
+  "source_sha256": "0d9de93e9af7441ac803837bf4bebceed7d890b015ea4c194bad5dd414921d55",
+  "components": {
+    "homogenization": [
+      "Execute the pinned released Q1 periodic homogenization solver at the paper's 64x64 training and 128x128 testing meshes.",
+      "Apply Equation 8's unit-cell area normalization and calibrate the full-solid modulus against the plane-stress analytic value.",
+      "Independently check equilibrium residuals, energy, a volume-preserving p4mm adjoint direction, central finite differences, and mesh consistency."
+    ],
+    "theorem_b9": [
+      "Discharge the universal n=2,3 quantifier through a complete maximal finite integral class, Weyl-lattice, duality, and affine-lift certificate.",
+      "Do not infer the theorem from finitely sampled example groups."
+    ],
+    "zero_shot": [
+      "Use the pinned p1-only pretrained diffusion checkpoint without retraining.",
+      "Run the paper's 300-step SDS optimizer through additional planar-group symmetric representations and independently verify the requested symmetries and mechanical outputs."
+    ]
+  },
+  "compound_verdict_rule": "Claim 6 is VERIFIED only when all three components are VERIFIED; otherwise it is BLOCKED unless a valid exact counterexample establishes FALSIFIED."
+}

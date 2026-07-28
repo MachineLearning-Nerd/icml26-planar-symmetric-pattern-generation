@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="410" viewBox="0 0 960 410">
+  <rect width="960" height="410" fill="#f8fafc"/>
+  <text x="48" y="52" fill="#0f172a" font-family="Arial,sans-serif" font-size="28" font-weight="700">Claim 2: finite curve replaced by a universal proof certificate</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="45" y="105" width="180" height="125" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="135" y="145" text-anchor="middle" fill="#1e3a8a" font-size="18" font-weight="700">Density</text>
+    <text x="135" y="177" text-anchor="middle" fill="#1e40af" font-size="14">continuous functions</text>
+    <text x="135" y="199" text-anchor="middle" fill="#1e40af" font-size="14">on compact Ω</text>
+    <rect x="275" y="105" width="180" height="125" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="365" y="145" text-anchor="middle" fill="#14532d" font-size="18" font-weight="700">Reynolds</text>
+    <text x="365" y="177" text-anchor="middle" fill="#166534" font-size="14">G-average</text>
+    <text x="365" y="199" text-anchor="middle" fill="#166534" font-size="14">operator norm ≤ 1</text>
+    <rect x="505" y="105" width="180" height="125" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="595" y="145" text-anchor="middle" fill="#78350f" font-size="18" font-weight="700">Hironaka</text>
+    <text x="595" y="177" text-anchor="middle" fill="#92400e" font-size="14">exact module</text>
+    <text x="595" y="199" text-anchor="middle" fill="#92400e" font-size="14">f = Σ hᵢηᵢ</text>
+    <rect x="735" y="105" width="180" height="125" rx="12" fill="#f3e8ff" stroke="#9333ea" stroke-width="2"/>
+    <text x="825" y="145" text-anchor="middle" fill="#581c87" font-size="18" font-weight="700">Strict L1 budget</text>
+    <text x="825" y="177" text-anchor="middle" fill="#6b21a8" font-size="14">0.0625 &lt; 0.125</text>
+    <text x="825" y="199" text-anchor="middle" fill="#6b21a8" font-size="14">for arbitrary ε</text>
+    <path d="M225 168H270M455 168H500M685 168H730" stroke="#64748b" stroke-width="4" marker-end="url(#a)"/>
+    <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#64748b"/></marker></defs>
+    <rect x="126" y="283" width="708" height="72" rx="10" fill="#fff" stroke="#cbd5e1"/>
+    <text x="480" y="313" text-anchor="middle" fill="#0f172a" font-size="17" font-weight="700">11/11 proof obligations · 3/3 tamper controls</text>
+    <text x="480" y="338" text-anchor="middle" fill="#475569" font-size="14">No target fitting, sample-count inference, or finite-sweep extrapolation</text>
+  </g>
+</svg>

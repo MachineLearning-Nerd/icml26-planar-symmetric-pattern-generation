@@ -1,0 +1,10 @@
+{
+  "fixed_command": "uv run --frozen python reproduce.py",
+  "python": "3.12.12",
+  "environment": "repository .venv from uv.lock",
+  "backend": "hf",
+  "flavor": "cpu-upgrade",
+  "estimated_claim_cores": 1,
+  "actual_job_vcpus": 64,
+  "note": "Claim 1 ran inside the cumulative Claim 6 job; no separate CPU allocation was made."
+}

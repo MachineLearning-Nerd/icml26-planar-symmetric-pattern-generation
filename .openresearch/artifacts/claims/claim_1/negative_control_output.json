@@ -1,0 +1,6 @@
+{
+  "control": "wrong_p6_subgroup_of_D4",
+  "expected": false,
+  "observed": false,
+  "passes": true
+}

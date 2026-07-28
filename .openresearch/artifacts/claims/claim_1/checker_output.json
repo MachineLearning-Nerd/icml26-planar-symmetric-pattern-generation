@@ -1,0 +1,9 @@
+{
+  "verifier_exit_code": 0,
+  "all_checks_pass": true,
+  "checks": {
+    "complete_17_group_ledger": true,
+    "point_group_subgroup": true,
+    "distort_then_inverse_conjugation_recovers": true
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "claim_id": 1,
+  "verdict_target": "VERIFIED",
+  "statement": "For every planar crystallographic group G, there exists A in GL(2,R) and an affine reflection group Wa such that A G A^-1 is a subgroup of Wa.",
+  "source_anchor": "https://ar5iv.labs.arxiv.org/html/2606.02073#S3.Thmtheorem2",
+  "domain": "All 17 affine-equivalence classes of planar crystallographic groups.",
+  "quantifiers": ["for every planar group G", "there exists an invertible A", "there exists an affine reflection supergroup Wa"],
+  "finite_complete_domain_check": "One representative point group from each of all 17 planar classes is checked against the paper-compatible reflection supergroup, with invertible distortion and recovery.",
+  "pass_condition": "All 17 subgroup and conjugation-recovery checks pass; all destructive controls behave as intended.",
+  "failure_exit": "The fixed verifier exits nonzero if any previously full-credit claim fails."
+}

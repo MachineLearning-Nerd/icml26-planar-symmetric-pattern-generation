@@ -1,0 +1,28 @@
+{
+  "byte_identical_old_paths": [
+    ".gitattributes",
+    ".serve.log",
+    "bucket-icon.svg",
+    "index.html",
+    "logbook.css",
+    "logbook.js",
+    "pages/overview/page.md",
+    "pages/verify/page.md",
+    "style.css",
+    "trackio-logo-light.png",
+    "trackio-logo.png",
+    "trackio-wordmark-dark.png"
+  ],
+  "candidate_file_count": 109,
+  "judged_revision": "0a5097dafd70804544be18562cbdafe265bf4617",
+  "missing_old_paths": [],
+  "note": "README.md, logbook.json, and pages/index.md are updated only to make current evidence canonical. Exact historical evidence pages remain at their original paths and hashes.",
+  "old_file_count": 15,
+  "old_file_set_is_subset": true,
+  "protected_historical_pages_byte_identical": true,
+  "updated_canonical_entrypoints": [
+    "README.md",
+    "logbook.json",
+    "pages/index.md"
+  ]
+}

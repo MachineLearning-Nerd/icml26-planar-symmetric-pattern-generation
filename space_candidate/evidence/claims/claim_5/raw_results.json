@@ -1,0 +1,38 @@
+{
+  "status": "VERIFIED",
+  "paper_configuration_run_id": "18f6dd71-7dc6-4254-ae74-a986b2aaacf5",
+  "release_configuration_run_id": "ebeeffbd-20ea-4abe-89f7-08465ee2a608",
+  "cumulative_run_id": "be3f0b80-0cad-420e-a04b-fbe56ce5c7e5",
+  "paper_source_sha256": "0d9de93e9af7441ac803837bf4bebceed7d890b015ea4c194bad5dd414921d55",
+  "upstream_commit": "b6a27efef00b80923ce9e6b66bb8847e83f289cf",
+  "paper_128_p4mm": {
+    "mesh": [128, 128],
+    "connected_p20_score": 1.9474125744209125,
+    "island_p20_score": 781.3051455378984,
+    "island_to_connected_ratio": 401.2016538253222,
+    "connected_unreachable_material_cells": 0,
+    "island_unreachable_material_cells": 1936,
+    "connected_relative_residual": 3.708731519337084e-07,
+    "island_relative_residual": 4.537965266665008e-07,
+    "score_recomputation_max_abs_error": 0.0,
+    "fixed_adjoint_step": 0.01,
+    "adjoint_relative_score_reduction": 0.12036986508126733,
+    "symmetry_max_abs_error": 0.0,
+    "scientific_runtime_seconds": 41.0744,
+    "estimated_cores": 8,
+    "actual_vcpus": 64
+  },
+  "released_192_p6mm": {
+    "mesh": [192, 192],
+    "connected_p20_score": 1.6255431,
+    "island_p20_score": 1042.33175,
+    "island_to_connected_ratio": 641.2206,
+    "island_unreachable_material_cells": 2884,
+    "max_relative_residual": 5.66e-07,
+    "adjoint_relative_score_reduction": 0.13495,
+    "symmetry_max_abs_error": 0.0,
+    "scientific_runtime_seconds": 50.235,
+    "estimated_cores": 8,
+    "actual_vcpus": 64
+  }
+}

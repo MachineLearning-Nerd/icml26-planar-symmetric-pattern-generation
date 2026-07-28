@@ -1,0 +1,20 @@
+{
+  "status": "VERIFIED",
+  "source_run_id": "be3f0b80-0cad-420e-a04b-fbe56ce5c7e5",
+  "git_sha": "ccf8fe2598f08cf010ed20ea63e266a36b5641b4",
+  "certificate_sha256": "8e97fe2cb456bfd1365827699bd64bf694c4dec08c0b888eb8a90759904776e2",
+  "source_sha256": "0d9de93e9af7441ac803837bf4bebceed7d890b015ea4c194bad5dd414921d55",
+  "norm": "L1(Omega)",
+  "quantifier_order": "for every continuous G-invariant f and every epsilon>0, there exist coefficients h_1,...,h_r",
+  "proof_obligations": 11,
+  "all_proof_obligations_pass": true,
+  "strict_budget_instance": {
+    "omega_measure": 7.0,
+    "epsilon": 0.125,
+    "delta": 0.008928571428571428,
+    "upper_bound": 0.0625,
+    "strictly_below_epsilon": true
+  },
+  "complete_planar_rank_ledger": true,
+  "noncircular": true
+}

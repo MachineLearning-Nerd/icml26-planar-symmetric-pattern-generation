@@ -1,0 +1,9 @@
+{
+  "verifier_exit_code": 0,
+  "overall_status": "BLOCKED",
+  "homogenization_all_checks_pass": true,
+  "theorem_b9_all_checks_pass": true,
+  "zero_shot_scoped_mechanism_all_checks_pass": true,
+  "zero_shot_exact_1000_sample_per_group_scope_complete": false,
+  "previously_full_credit_regression_pass": true
+}

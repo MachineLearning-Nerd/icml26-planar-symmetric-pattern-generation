@@ -1,0 +1,18 @@
+{
+  "paper": "Planar Symmetric Pattern Generation",
+  "arxiv_id": "2606.02073v1",
+  "retrieved_url": "https://ar5iv.labs.arxiv.org/html/2606.02073",
+  "retrieved_at_utc": "2026-07-28T17:46:13Z",
+  "user_agent": "OpenResearch-Reproduction/1.0 (claim-audit; contact via project repository)",
+  "sha256": "0d9de93e9af7441ac803837bf4bebceed7d890b015ea4c194bad5dd414921d55",
+  "anchors": {
+    "claim_1": "#S3.Thmtheorem2",
+    "claim_2": "#S3.Thmtheorem3",
+    "claim_3": "#S3.E3",
+    "claim_4": "#S3.A1",
+    "claim_5": "#S5.E6",
+    "claim_6_equation": "#S5.E8",
+    "claim_6_figure": "#S6.F8",
+    "claim_6_theorem": "#A2.Thmtheorem9"
+  }
+}
