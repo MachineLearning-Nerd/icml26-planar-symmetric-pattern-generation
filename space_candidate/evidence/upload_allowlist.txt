@@ -75,6 +75,7 @@ pages/claim-3/page.md
 pages/claim-4/page.md
 pages/claim-5/page.md
 pages/claim-6/page.md
+pages/index.md
 pages/release/page.md
 pyproject.toml
 reports/planar-symmetric-pattern-generation/images/headline-vtm.svg

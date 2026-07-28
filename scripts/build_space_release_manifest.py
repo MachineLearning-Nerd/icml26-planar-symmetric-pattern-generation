@@ -15,6 +15,7 @@ EXACT_FILES = {
     "README.md",
     "campaign_config.json",
     "logbook.json",
+    "pages/index.md",
     "pyproject.toml",
     "reproduce.py",
     "uv.lock",
