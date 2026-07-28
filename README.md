@@ -8,6 +8,10 @@ The previous live score is **8/12**. Current evidence marks Claims 1–5
 **VERIFIED** and Claim 6 **BLOCKED**. A conservative projected range of
 10–12/12 is a forecast, not a new judge result.
 
+Published evaluator artifact:
+[`DineshAI/nbU2LNYdZN@fb78b1ca`](https://huggingface.co/spaces/DineshAI/nbU2LNYdZN/commit/fb78b1cae6b4cd2e6f1b8a568765c783efda95ba);
+status remains awaiting the live judge.
+
 The main improvements are:
 
 - Claim 2 replaces a one-target p4mm fit with a universal symbolic proof
@@ -47,7 +51,7 @@ The tutorial embeds the evidence and does not rerun expensive work.
 | [`orx/claim-6-zero-shot-source-faithful-verifier`](https://github.com/MachineLearning-Nerd/icml26-repro-nbU2LNYdZN-planar-symmetric-pattern-generation/tree/orx/claim-6-zero-shot-source-faithful-verifier) | All-12 exact SDS replay plus independent direct mechanics | `uv run --frozen python reproduce.py` | Scoped mechanism VERIFIED; full Claim 6 BLOCKED at 1/1,000 samples/group | HF cpu-upgrade, 8 allocated vCPU / 64 logical visible; 2,529.99 s scientific |
 | [`orx/cumulative-evaluator-visible-release-candidate`](https://github.com/MachineLearning-Nerd/icml26-repro-nbU2LNYdZN-planar-symmetric-pattern-generation/tree/orx/cumulative-evaluator-visible-release-candidate) | Canonical pages, raw evidence, reports, notebook, release gates | `uv run --frozen python reproduce.py` | Claims 1–5 pass; Claim 6 remains BLOCKED | HF cpu-upgrade, 8 allocated vCPU / 64 logical visible; 593.15 s scientific |
 | [`orx/provider-allocated-cpu-metadata-correction`](https://github.com/MachineLearning-Nerd/icml26-repro-nbU2LNYdZN-planar-symmetric-pattern-generation/tree/orx/provider-allocated-cpu-metadata-correction) | Distinguish provider allocation from visible CPUs and recalibrate paper-scale bound | `uv run --frozen python reproduce.py` | Cumulative replay passed; no scientific threshold changed | HF cpu-upgrade, 8 allocated vCPU / 64 logical visible; 1,047.07 s scientific |
-| [`orx/canonical-index-upload-allowlist-fix`](https://github.com/MachineLearning-Nerd/icml26-repro-nbU2LNYdZN-planar-symmetric-pattern-generation/tree/orx/canonical-index-upload-allowlist-fix) | Upload the current canonical index ahead of preserved history | `uv run --frozen python reproduce.py` | Final cumulative replay target; publication-only allowlist fix | HF cpu-upgrade, 8 allocated vCPU / 64 logical visible |
+| [`orx/canonical-index-upload-allowlist-fix`](https://github.com/MachineLearning-Nerd/icml26-repro-nbU2LNYdZN-planar-symmetric-pattern-generation/tree/orx/canonical-index-upload-allowlist-fix) | Upload the current canonical index ahead of preserved history | `uv run --frozen python reproduce.py` | Cumulative replay passed; Claims 1–5 VERIFIED, Claim 6 BLOCKED | HF cpu-upgrade, 8 allocated vCPU / 64 logical visible; 971.16 s scientific |
 
 ## Current claim ledger
 
