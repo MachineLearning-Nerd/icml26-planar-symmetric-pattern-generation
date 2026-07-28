@@ -21,8 +21,10 @@ The main improvements are:
   claim stays BLOCKED.
 
 All long or uncertain CPU work ran on Hugging Face `cpu-upgrade`; no GPU was
-used. The environment is Python 3.12 in one repository `.venv`, locked by
-`uv.lock`. The fixed command for every experiment is:
+used. The pinned container is
+`ghcr.io/astral-sh/uv:python3.12-bookworm-slim`; the environment is Python
+3.12 in one repository `.venv`, locked by `uv.lock`. The fixed command for
+every experiment is:
 
 ```bash
 uv run --frozen python reproduce.py

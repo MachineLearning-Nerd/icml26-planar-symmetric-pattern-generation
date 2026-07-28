@@ -4,6 +4,7 @@
   "environment": "repository .venv from uv.lock",
   "backend": "hf",
   "flavor": "cpu-upgrade",
+  "image": "ghcr.io/astral-sh/uv:python3.12-bookworm-slim",
   "estimated_cores": 8,
   "actual_vcpus": 64,
   "paper_128_scientific_runtime_seconds": 41.0744,

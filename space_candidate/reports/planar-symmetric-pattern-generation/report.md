@@ -116,6 +116,8 @@ therefore BLOCKED, not promoted from a calibrated mechanism test.
 ## Compute and provenance
 
 All long or uncertain work ran on Hugging Face `cpu-upgrade`; no GPU was used.
+The container was pinned to
+`ghcr.io/astral-sh/uv:python3.12-bookworm-slim`.
 Claim 5 estimated 8 cores and received 64 vCPUs for 41.07 scientific seconds.
 Claim 6 mechanics estimated 16 and received 64 vCPUs for 150.01 seconds. The
 all-12 zero-shot route estimated and received 64 vCPUs, used 2,529.99

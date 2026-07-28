@@ -1,1 +1,1 @@
-{"fixed_command": "uv run --frozen python reproduce.py", "python": "3.12.12", "backend": "hf", "flavor": "cpu-upgrade", "estimated_claim_cores": 1, "actual_job_vcpus": 64}
+{"fixed_command": "uv run --frozen python reproduce.py", "python": "3.12.12", "backend": "hf", "flavor": "cpu-upgrade", "image": "ghcr.io/astral-sh/uv:python3.12-bookworm-slim", "estimated_claim_cores": 1, "actual_job_vcpus": 64}

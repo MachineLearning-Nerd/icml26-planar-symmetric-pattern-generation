@@ -6,6 +6,7 @@
   "cumulative_run_id": "be3f0b80-0cad-420e-a04b-fbe56ce5c7e5",
   "backend": "hf",
   "flavor": "cpu-upgrade",
+  "image": "ghcr.io/astral-sh/uv:python3.12-bookworm-slim",
   "estimated_claim_cores": 1,
   "actual_job_vcpus": 64,
   "dedicated_scientific_runtime_seconds": 0.332529

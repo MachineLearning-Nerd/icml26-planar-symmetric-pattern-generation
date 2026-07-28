@@ -31,6 +31,10 @@ Remaining BLOCKED claim: Claim 6. The paper evaluates 1,000 samples for each of
 workers on 64 vCPUs, 12,000 checked samples require at least 750 waves; the
 observed slowest checked worker gives a 20.27-day lower bound before overhead.
 
+All scientific CPU jobs used HF `cpu-upgrade`, the pinned image
+`ghcr.io/astral-sh/uv:python3.12-bookworm-slim`, the one repository `.venv`,
+and the exact fixed command `uv run --frozen python reproduce.py`.
+
 Exact publication action after all gates pass: upload only the text paths in
 `evidence/upload_allowlist.txt` to the existing Space
 `DineshAI/nbU2LNYdZN`, verify the returned revision and every downloaded hash,

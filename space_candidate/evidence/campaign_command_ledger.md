@@ -35,13 +35,23 @@ uv run --frozen python reproduce.py
 Every nontrivial or uncertain CPU run used:
 
 ```bash
-orx exp run <experiment-id> --backend hf --flavor cpu-upgrade
+orx exp run <experiment-id> --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim --timeout 6h
 orx exp wait <experiment-id> --timeout 480
 orx logs <run-id>
 ```
 
 No GPU command was issued. Hyperparameters and claim stages were committed in
 code or `campaign_config.json`, never injected through an alternate command.
+
+The first release-node launch omitted `--image`, so the default `python:3.12`
+container exited 127 because `uv` was unavailable. Its zero-byte scientific
+run was rejected. The same frozen code was relaunched with the pinned image:
+
+```bash
+orx exp run 16f71cdc-953d-44a8-8cc4-cd4545d06f59 --backend hf --flavor cpu-upgrade --timeout 21600
+orx logs f2d26fef-1f9f-4b7c-92f0-9513837b63d5 --bytes 30000
+orx exp run 16f71cdc-953d-44a8-8cc4-cd4545d06f59 --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim --timeout 6h
+```
 
 ## Release-gate commands
 
