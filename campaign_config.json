@@ -1,8 +1,8 @@
 {
-  "stage": "claim6_mechanics",
+  "stage": "claim6_zeroshot_first12",
   "seed": 20260728,
-  "estimated_scientific_cores": 16,
+  "estimated_scientific_cores": 64,
   "selected_backend": "hf",
   "selected_flavor": "cpu-upgrade",
-  "reason": "Cumulative VTM plus repeated 64x64 and 128x128 three-load-case homogenization solves, multigrid preconditioners, adjoint, finite-difference, and mesh-convergence checks have uncertain runtime and can use several CPU cores."
+  "reason": "Cumulative VTM/mechanics plus twelve independent 300-step 64x64 SDS optimizations and a deterministic replay have uncertain multi-hour runtime; twelve four-thread CPU workers are planned within the 64-CPU allocation."
 }

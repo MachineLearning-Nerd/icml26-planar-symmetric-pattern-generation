@@ -18,6 +18,7 @@ from repro.baseline import run_baseline
 from repro.claim2_proof import verify_claim_2
 from repro.claim5_vtm import verify_claim_5
 from repro.claim6_mechanics import verify_claim_6_mechanics
+from repro.claim6_zeroshot import verify_zero_shot
 
 
 ROOT = Path(__file__).resolve().parent
@@ -58,6 +59,22 @@ def main() -> int:
         report["negative_controls"]["claim_5_vtm"] = claim_5_controls
     if config["stage"].startswith("claim6_"):
         claim_6, claim_6_controls = verify_claim_6_mechanics(config)
+        if config["stage"] in {"claim6_zeroshot_first12", "claim6_complete"}:
+            zero_shot, zero_shot_controls = verify_zero_shot(config)
+            claim_6["zero_shot_metamaterial"] = zero_shot
+            claim_6["status"] = (
+                "VERIFIED"
+                if zero_shot["status"] == "VERIFIED"
+                and claim_6["homogenization_mechanics"]["status"] == "VERIFIED"
+                and claim_6["theorem_b9"]["status"] == "VERIFIED"
+                else "BLOCKED"
+            )
+            claim_6["reason"] = (
+                "All three compound components pass the exact claim verifier."
+                if claim_6["status"] == "VERIFIED"
+                else "At least one compound Claim 6 component remains BLOCKED."
+            )
+            claim_6_controls["zero_shot"] = zero_shot_controls
         report["claims"]["claim_6"] = claim_6
         report["negative_controls"]["claim_6_mechanics"] = claim_6_controls
     report["runtime_seconds"] = time.perf_counter() - started

@@ -334,7 +334,11 @@ def _verify_theorem_b9() -> tuple[dict, dict]:
 
 
 def verify_claim_6_mechanics(config: dict) -> tuple[dict, dict]:
-    if config["stage"] not in {"claim6_mechanics", "claim6_complete"}:
+    if config["stage"] not in {
+        "claim6_mechanics",
+        "claim6_zeroshot_first12",
+        "claim6_complete",
+    }:
         raise RuntimeError(f"Unsupported Claim 6 stage: {config['stage']}")
     torch.set_num_threads(min(16, max(1, int(config["estimated_scientific_cores"]))))
     solver_class = _load_pinned_solver()

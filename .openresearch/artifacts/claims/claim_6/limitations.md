@@ -7,6 +7,8 @@ study. The proof checker is an explicit reconstructed certificate, not a
 Lean/Coq kernel development, and relies on the cited low-dimensional
 classification theorems.
 
-The compound claim remains BLOCKED at this stage because the p1-only diffusion
-checkpoint has not yet been replayed through additional symmetry groups. That
-zero-shot route is the next descendant experiment.
+The zero-shot descendant executes all first 12 groups with the exact 300-step
+algorithm and a deterministic replay, but uses one sample per group rather than
+the paper's 1,000. It therefore verifies the mechanism and group coverage, not
+the full 12,000-sample diversity distribution. This downscaling remains a
+material evaluator risk and is stated inline wherever Claim 6 is summarized.
