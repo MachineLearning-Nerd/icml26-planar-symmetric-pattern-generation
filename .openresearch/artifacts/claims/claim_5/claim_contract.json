@@ -1,0 +1,18 @@
+{
+  "claim_id": 5,
+  "verdict_values": ["VERIFIED", "FALSIFIED", "BLOCKED"],
+  "source": {
+    "anchors": ["S5.E6", "S5.F4", "A5.Thmtheorem3", "A6.SS2"],
+    "sha256": "0d9de93e9af7441ac803837bf4bebceed7d890b015ea4c194bad5dd414921d55"
+  },
+  "contract": [
+    "Use the released finite-element Virtual Temperature Method, not a graph proxy.",
+    "Use Equation 6's p=20 temperature norm and Appendix F.2's 128x128 Q1 mesh, 2x2 supercell, sink Gamma, q0, conductivity range, and SIMP penalty.",
+    "Both positive and disconnected-control densities must be exactly periodic and p4mm invariant.",
+    "An independent flood fill must find zero unreachable material in the connected design and nonzero unreachable material in the island design.",
+    "The island VTM score must exceed twice the connected score.",
+    "Independent score recomputation and the free-DOF linear-system residual must pass.",
+    "A fixed released-adjoint descent step must reduce the VTM score.",
+    "A verifier must reject deliberate periodicity and p4mm violations."
+  ]
+}

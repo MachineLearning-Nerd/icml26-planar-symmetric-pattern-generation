@@ -1,8 +1,8 @@
 {
-  "stage": "claim2_proof",
+  "stage": "claim5_vtm_128",
   "seed": 20260728,
-  "estimated_scientific_cores": 1,
+  "estimated_scientific_cores": 8,
   "selected_backend": "hf",
   "selected_flavor": "cpu-upgrade",
-  "reason": "The symbolic proof-certificate verifier is single-core and short; remote environment synchronization remains runtime-uncertain."
+  "reason": "The released 128x128 sparse finite-element VTM solve, multigrid preconditioner, adjoint, and independent replay have uncertain runtime and can use several CPU cores."
 }
