@@ -35,5 +35,5 @@ Evidence: [contract](../../evidence/claims/claim_4/claim_contract.json) ·
 
 Run `be3f0b80-0cad-420e-a04b-fbe56ce5c7e5`, Git `ccf8fe2`, deterministic
 seed ledger, Python 3.12.12 in the locked `uv` environment. Estimated 1 core;
-actual cumulative allocation 64 vCPUs on HF `cpu-upgrade`; the claim-local
-check finishes in under one scientific second.
+cumulative provider allocation 8 vCPUs on HF `cpu-upgrade`, with 64 logical
+CPUs visible; the claim-local check finishes in under one scientific second.

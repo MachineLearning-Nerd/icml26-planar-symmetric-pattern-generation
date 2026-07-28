@@ -27,13 +27,15 @@ experiment with paper-native VTM evidence; Claim 6 adds exact homogenization,
 B.9, and all-12 zero-shot calibration but remains BLOCKED at population scale.
 
 Remaining BLOCKED claim: Claim 6. The paper evaluates 1,000 samples for each of
-12 groups. The checked route ran one per group. With 16 concurrent four-thread
-workers on 64 vCPUs, 12,000 checked samples require at least 750 waves; the
-observed slowest checked worker gives a 20.27-day lower bound before overhead.
+12 groups. The checked route ran one per group. Twelve primary workers were
+observed concurrently, so 12,000 checked samples require at least 1,000 waves;
+the observed slowest worker gives a 6.09-day lower bound before overhead.
 
 All scientific CPU jobs used HF `cpu-upgrade`, the pinned image
 `ghcr.io/astral-sh/uv:python3.12-bookworm-slim`, the one repository `.venv`,
-and the exact fixed command `uv run --frozen python reproduce.py`.
+and the exact fixed command `uv run --frozen python reproduce.py`. The provider
+catalog reports 8 allocated vCPUs, 32 GB, and $0.03/hour; the accepted 610 s
+release replay cost approximately **$0.0051** before any account-level rounding.
 
 Exact publication action after all gates pass: upload only the text paths in
 `evidence/upload_allowlist.txt` to the existing Space

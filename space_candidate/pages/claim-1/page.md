@@ -38,5 +38,5 @@ Evidence: [contract](../../evidence/claims/claim_1/claim_contract.json) ·
 
 Evidence run `be3f0b80-0cad-420e-a04b-fbe56ce5c7e5`, Git
 `ccf8fe2598f08cf010ed20ea63e266a36b5641b4`, Python 3.12.12, locked `uv`
-environment. Claim-local estimate 1 core; it ran within the 64-vCPU cumulative
-HF `cpu-upgrade` job.
+environment. Claim-local estimate 1 core; it ran within a cumulative HF
+`cpu-upgrade` job allocated 8 vCPUs with 64 logical CPUs visible.

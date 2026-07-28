@@ -51,6 +51,11 @@ run was rejected. The same frozen code was relaunched with the pinned image:
 orx exp run 16f71cdc-953d-44a8-8cc4-cd4545d06f59 --backend hf --flavor cpu-upgrade --timeout 21600
 orx logs f2d26fef-1f9f-4b7c-92f0-9513837b63d5 --bytes 30000
 orx exp run 16f71cdc-953d-44a8-8cc4-cd4545d06f59 --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim --timeout 6h
+orx logs aa790329-76b1-48a3-a8e7-9e343d6440ba --bytes 100000
+hf jobs inspect 6a69105315e81eca66a8d5df --format json
+hf jobs hardware --format json
+orx create-experiment 4e5aa507-319b-4d9c-b9dd-ef10beda6e9f --title "Provider-allocated CPU metadata correction" --parent 16f71cdc-953d-44a8-8cc4-cd4545d06f59
+orx exp run 67dc6a85-2e14-440a-aa1b-ec7a5f0a39fc --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim --timeout 6h
 ```
 
 ## Release-gate commands

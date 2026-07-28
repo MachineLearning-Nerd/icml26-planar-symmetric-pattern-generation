@@ -36,10 +36,10 @@ uv run --frozen python verify_release.py
 ```
 
 Both verifiers exit nonzero when required evidence fails. Formal evidence run:
-`be3f0b80-0cad-420e-a04b-fbe56ce5c7e5`, Git
-`ccf8fe2598f08cf010ed20ea63e266a36b5641b4`, HF `cpu-upgrade`, 64 vCPUs,
-official uv Python 3.12 image, Python 3.12.12, deterministic seeds recorded per
-claim.
+`aa790329-76b1-48a3-a8e7-9e343d6440ba`, Git
+`16836d45429205ad3912c462bdec09a3cd0e4b64`, HF `cpu-upgrade`, provider
+allocation 8 vCPUs/32 GB, 64 logical CPUs visible, official uv Python 3.12
+image, Python 3.12.12, deterministic seeds recorded per claim.
 
 ## Visibility matrix
 

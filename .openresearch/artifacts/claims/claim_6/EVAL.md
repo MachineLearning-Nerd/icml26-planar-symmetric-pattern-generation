@@ -8,11 +8,13 @@ p1-only checkpoint also completes a 300-step, seed-42 zero-shot replay for one
 sample in each of the first 12 groups. That scoped mechanism passes symmetry,
 volume, uniqueness, direct equilibrium, void, and deterministic-replay checks.
 
-It is not the paper's 1,000 samples per group. The observed checked worker range
-is 506.6–2,335.3 seconds with four threads. On 64 vCPUs, 12,000 checked samples
-need at least 750 ideal waves, or 20.27 days at the observed maximum before
-overhead. The population-level Figure 8 statement is therefore not verified or
-falsified on the authorized CPU campaign.
+It is not the paper's 1,000 samples per group. The accepted replay ran all 12
+primary workers concurrently; their measured range was 347.1–526.1 seconds.
+At that observed concurrency, 12,000 samples need at least 1,000 ideal waves,
+or 6.09 days at the observed maximum before overhead. HF's catalog allocates
+8 vCPUs/32 GB while the container exposed 64 logical CPUs; those quantities
+are not conflated. The population-level Figure 8 statement is therefore not
+verified or falsified on the authorized CPU campaign.
 
 The released native CG solver reaches residual 0.380 on one generated mask; the
 current verifier records it and uses an independent direct sparse solve

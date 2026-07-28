@@ -479,6 +479,17 @@ def verify_zero_shot(config: dict) -> tuple[dict, dict]:
             [row["mechanics"]["normalized_bulk_modulus"] for row in primary_rows]
         )
     )
+    paper_total_samples = len(GROUPS) * 1000
+    observed_concurrent_primary_workers = len(primary_rows)
+    paper_scale_minimum_waves = math.ceil(
+        paper_total_samples / observed_concurrent_primary_workers
+    )
+    slowest_primary_worker_seconds = max(
+        row["runtime_seconds"] for row in primary_rows
+    )
+    observed_concurrency_lower_bound_days = (
+        paper_scale_minimum_waves * slowest_primary_worker_seconds / 86400
+    )
 
     checks: list[dict] = []
 
@@ -649,6 +660,15 @@ def verify_zero_shot(config: dict) -> tuple[dict, dict]:
             ],
             "unique_mask_count": len(
                 {row["mask_sha256"] for row in primary_rows}
+            ),
+            "observed_concurrent_primary_workers": (
+                observed_concurrent_primary_workers
+            ),
+            "paper_total_samples": paper_total_samples,
+            "paper_scale_minimum_waves": paper_scale_minimum_waves,
+            "slowest_primary_worker_seconds": slowest_primary_worker_seconds,
+            "observed_concurrency_lower_bound_days": (
+                observed_concurrency_lower_bound_days
             ),
         },
         "rows": primary_rows,

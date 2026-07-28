@@ -137,8 +137,9 @@ def _(claim_picker, mo):
 
         Mechanics and Theorem B.9 pass. The exact 300-step checkpoint route
         also passes one sample in each first-12 group. But the paper reports
-        1,000 samples per group. On 64 vCPUs, the measured checked route has a
-        lower bound of 20.27 days for all 12,000 samples. No population claim
+        1,000 samples per group. With 12 primary workers observed concurrently,
+        the measured route has a lower bound of 6.09 days for all 12,000
+        samples. No population claim
         is inferred from the calibration.
         """,
     }

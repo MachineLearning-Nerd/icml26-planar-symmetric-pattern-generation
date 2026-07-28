@@ -6,6 +6,7 @@
   "flavor": "cpu-upgrade",
   "image": "ghcr.io/astral-sh/uv:python3.12-bookworm-slim",
   "estimated_claim_cores": 1,
-  "actual_job_vcpus": 64,
-  "note": "Claim 1 ran inside the cumulative Claim 6 job; no separate CPU allocation was made."
+  "provider_allocated_vcpus": 8,
+  "container_visible_logical_cpus": 64,
+  "note": "Claim 1 ran inside a cumulative HF cpu-upgrade job; provider allocation and container-visible logical CPUs are reported separately."
 }

@@ -50,10 +50,12 @@ assembled systems with SciPy direct sparse factorization.
 
 ## Why the verdict is BLOCKED
 
-This ran **1 sample per group, not 1,000**. With 16 concurrent four-thread
-workers on 64 vCPUs, 12,000 checked samples require at least 750 ideal waves.
-The observed slowest checked worker gives **20.27 days** before provisioning,
-failures, or report overhead. No population-distribution conclusion is made.
+This ran **1 sample per group, not 1,000**. The accepted replay observed all 12
+primary workers concurrently, so 12,000 checked samples require at least 1,000
+ideal waves. The observed slowest primary worker gives **6.09 days** before
+provisioning, failures, or report overhead. HF allocates 8 vCPUs/32 GB while
+the container exposes 64 logical CPUs; neither is misreported as the other.
+No population-distribution conclusion is made.
 
 Full regeneration: `uv run --frozen python reproduce.py`. Fast checker:
 `uv run --frozen python verify_release.py`.
@@ -71,8 +73,10 @@ Evidence: [contract](../../evidence/claims/claim_6/claim_contract.json) ·
 [mechanics code](../../repro/claim6_mechanics.py) ·
 [zero-shot code](../../repro/claim6_zeroshot.py)
 
-Run `be3f0b80-0cad-420e-a04b-fbe56ce5c7e5`, Git `ccf8fe2`, estimate/actual
-64 vCPUs, 2,529.99 scientific seconds, 42m49s total job.
+Run `aa790329-76b1-48a3-a8e7-9e343d6440ba`, Git `16836d4`; estimate 64
+scientific cores, provider allocation 8 vCPUs, 64 logical CPUs visible,
+593.15 scientific seconds, 610 seconds provider runtime, approximately
+`$0.0051` at the catalog rate of `$0.03/hour`.
 
 The superseded parent is labeled **Historical rejected baseline** because its
 invented 10× disconnected-square gate is not a Figure 8 quantifier.

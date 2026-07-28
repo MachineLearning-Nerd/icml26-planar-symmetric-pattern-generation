@@ -6,7 +6,8 @@
   "flavor": "cpu-upgrade",
   "image": "ghcr.io/astral-sh/uv:python3.12-bookworm-slim",
   "estimated_cores": 8,
-  "actual_vcpus": 64,
+  "provider_allocated_vcpus": 8,
+  "container_visible_logical_cpus": 64,
   "paper_128_scientific_runtime_seconds": 41.0744,
   "released_192_scientific_runtime_seconds": 50.235
 }

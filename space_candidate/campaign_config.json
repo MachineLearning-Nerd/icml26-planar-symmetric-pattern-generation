@@ -4,5 +4,8 @@
   "estimated_scientific_cores": 64,
   "selected_backend": "hf",
   "selected_flavor": "cpu-upgrade",
-  "reason": "Cumulative VTM/mechanics plus twelve independent 300-step 64x64 SDS optimizations and a deterministic replay have uncertain multi-hour runtime; twelve four-thread CPU workers are planned within the 64-CPU allocation."
+  "provider_allocated_vcpus": 8,
+  "provider_ram_gb": 32,
+  "provider_cost_per_hour_usd": 0.03,
+  "reason": "The cumulative VTM/mechanics and thirteen independent four-thread SDS tasks have uncertain runtime, so they are routed to HF cpu-upgrade. The provider catalog allocates 8 vCPUs and 32 GB; the accepted container exposed 64 logical CPUs and executed all 13 tasks concurrently, which is recorded separately from allocation."
 }

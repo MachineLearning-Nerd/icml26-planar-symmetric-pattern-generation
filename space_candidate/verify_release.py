@@ -75,6 +75,11 @@ def main() -> int:
     require(c6["homogenization"]["status"] == "VERIFIED", "Claim 6 mechanics")
     require(c6["theorem_b9"]["status"] == "VERIFIED", "Claim 6 theorem")
     require(
+        c6["theorem_b9"]["certificate_sha256"]
+        == sha256(CLAIMS / "claim_6" / "theorem_b9_certificate.json"),
+        "Claim 6 theorem certificate hash",
+    )
+    require(
         c6["zero_shot"]["mechanism_status"] == "VERIFIED"
         and c6["zero_shot"]["status"] == "BLOCKED",
         "Claim 6 scoped/full distinction",
@@ -87,6 +92,17 @@ def main() -> int:
     require(
         c6["zero_shot"]["maximum_direct_residual"] < 1e-8,
         "Claim 6 independent equilibrium",
+    )
+    require(
+        c6["zero_shot"]["provider_allocated_vcpus"] == 8
+        and c6["zero_shot"]["container_visible_logical_cpus"] == 64,
+        "Claim 6 allocated/visible CPU distinction",
+    )
+    require(
+        c6["zero_shot"]["observed_concurrent_primary_workers"] == 12
+        and c6["zero_shot"]["paper_scale_ideal_worker_waves"] == 1000
+        and c6["zero_shot"]["paper_scale_checked_lower_bound_days"] > 6,
+        "Claim 6 non-circular paper-scale calibration",
     )
     require(len(load(6, "zero_shot_rows.json")) == 12, "Claim 6 row ledger")
     require(

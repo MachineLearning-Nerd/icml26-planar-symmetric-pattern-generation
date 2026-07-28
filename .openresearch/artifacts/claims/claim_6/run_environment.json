@@ -6,11 +6,12 @@
   "flavor": "cpu-upgrade",
   "image": "ghcr.io/astral-sh/uv:python3.12-bookworm-slim",
   "homogenization_run_id": "2baf267a-e5c7-4c7b-afcb-24e9643fb10e",
-  "zero_shot_run_id": "be3f0b80-0cad-420e-a04b-fbe56ce5c7e5",
+  "zero_shot_run_id": "aa790329-76b1-48a3-a8e7-9e343d6440ba",
   "homogenization_estimated_cores": 16,
   "zero_shot_estimated_cores": 64,
-  "actual_vcpus": 64,
+  "provider_allocated_vcpus": 8,
+  "container_visible_logical_cpus": 64,
   "homogenization_scientific_runtime_seconds": 150.005,
-  "zero_shot_scientific_runtime_seconds": 2529.991180382902,
-  "zero_shot_total_job_seconds": 2569
+  "zero_shot_scientific_runtime_seconds": 593.1547404350001,
+  "zero_shot_total_job_seconds": 610
 }

@@ -24,8 +24,8 @@
     <text x="772" y="135" text-anchor="middle" fill="#fed7aa" font-size="20" font-weight="700">Paper population</text>
     <text x="772" y="193" text-anchor="middle" fill="#fff7ed" font-size="44" font-weight="700">1 / 1,000</text>
     <text x="772" y="226" text-anchor="middle" fill="#fdba74" font-size="16">samples per group run</text>
-    <text x="772" y="286" text-anchor="middle" fill="#fff7ed" font-size="29" font-weight="700">≥ 20.27 days</text>
-    <text x="772" y="315" text-anchor="middle" fill="#fdba74" font-size="14">checked 64-vCPU lower bound</text>
+    <text x="772" y="286" text-anchor="middle" fill="#fff7ed" font-size="29" font-weight="700">≥ 6.09 days</text>
+    <text x="772" y="315" text-anchor="middle" fill="#fdba74" font-size="14">12-worker observed lower bound</text>
     <text x="772" y="376" text-anchor="middle" fill="#fecaca" font-size="19" font-weight="700">Overall: BLOCKED</text>
     <text x="48" y="465" fill="#94a3b8" font-size="14">No population diversity or “strong performance” distribution conclusion is inferred from the scoped calibration.</text>
   </g>

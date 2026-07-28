@@ -97,10 +97,10 @@ The released CG evaluation reaches residual 0.380 for one mask. The verifier
 therefore records the native value but recomputes equilibrium with a direct
 sparse solve; the maximum independent residual is \(3.25\times10^{-9}\).
 
-This is not the paper's 12,000-sample evaluation. At 64 vCPUs, only 16
-four-thread samples fit concurrently. The observed slowest checked worker
-implies at least 20.27 days for 750 ideal waves before overhead. Claim 6 is
-therefore BLOCKED, not promoted from a calibrated mechanism test.
+This is not the paper's 12,000-sample evaluation. The accepted run observed
+all 12 primary samples concurrently. Its slowest checked worker implies at
+least 6.09 days for 1,000 ideal waves before overhead. Claim 6 is therefore
+BLOCKED, not promoted from a calibrated mechanism test.
 
 ## Claim-level assessment
 
@@ -118,11 +118,12 @@ therefore BLOCKED, not promoted from a calibrated mechanism test.
 All long or uncertain work ran on Hugging Face `cpu-upgrade`; no GPU was used.
 The container was pinned to
 `ghcr.io/astral-sh/uv:python3.12-bookworm-slim`.
-Claim 5 estimated 8 cores and received 64 vCPUs for 41.07 scientific seconds.
-Claim 6 mechanics estimated 16 and received 64 vCPUs for 150.01 seconds. The
-all-12 zero-shot route estimated and received 64 vCPUs, used 2,529.99
-scientific seconds, and occupied 42m49s wall time. Short syntax and
-single-solve checks used one local core for under five minutes.
+HF's catalog allocated 8 vCPUs/32 GB while the container exposed 64 logical
+CPUs. Claim 5 estimated 8 cores and used 41.07 scientific seconds. Claim 6
+mechanics estimated 16 cores and used 150.01 seconds. The accepted all-12
+zero-shot replay estimated 64 scientific cores, used 593.15 scientific seconds,
+and occupied 610 provider seconds. Short syntax and single-solve checks used
+one local core for under five minutes.
 
 Important experiment branches:
 

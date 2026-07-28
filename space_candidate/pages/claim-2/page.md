@@ -50,5 +50,5 @@ Evidence: [contract](../../evidence/claims/claim_2/claim_contract.json) ·
 Dedicated run `f79c9162-8380-4bf8-9db9-b46e09c6bd57`; cumulative run
 `be3f0b80-0cad-420e-a04b-fbe56ce5c7e5`; deterministic certificate; scientific
 runtime 0.333 s. Git `ccf8fe2598f08cf010ed20ea63e266a36b5641b4`;
-seed: no RNG is used. Estimated 1 core; actual cumulative allocation 64 vCPUs
-on HF `cpu-upgrade`.
+seed: no RNG is used. Estimated 1 core; cumulative provider allocation 8 vCPUs
+on HF `cpu-upgrade`, with 64 logical CPUs visible.

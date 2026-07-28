@@ -84,7 +84,7 @@ def review(snapshot: Path, pass_name: str) -> dict[str, object]:
             checks["blocked_scope"] = (
                 "BLOCKED" in text
                 and "1 sample per group, not 1,000" in text
-                and "20.27 days" in text
+                and "6.09 days" in text
             )
         for target in markdown_targets(text):
             path = resolve_link(snapshot, snapshot / relative, target)

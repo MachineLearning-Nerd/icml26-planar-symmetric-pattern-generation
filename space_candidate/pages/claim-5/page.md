@@ -44,7 +44,8 @@ Evidence: [contract](../../evidence/claims/claim_5/claim_contract.json) ·
 [code](../../repro/claim5_vtm.py)
 
 Paper run `18f6dd71-7dc6-4254-ae74-a986b2aaacf5`: estimate 8 cores,
-actual 64 vCPUs, 41.07 scientific seconds. Released-configuration run
+provider allocation 8 vCPUs (64 logical visible), 41.07 scientific seconds.
+Released-configuration run
 `ebeeffbd-20ea-4abe-89f7-08465ee2a608`: 50.24 scientific seconds. Git
 `ccf8fe2598f08cf010ed20ea63e266a36b5641b4`; seed: deterministic analytic
 density fields, no RNG.

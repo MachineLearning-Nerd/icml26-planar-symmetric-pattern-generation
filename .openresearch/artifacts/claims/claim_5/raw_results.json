@@ -20,7 +20,8 @@
     "symmetry_max_abs_error": 0.0,
     "scientific_runtime_seconds": 41.0744,
     "estimated_cores": 8,
-    "actual_vcpus": 64
+    "provider_allocated_vcpus": 8,
+    "container_visible_logical_cpus": 64
   },
   "released_192_p6mm": {
     "mesh": [192, 192],
@@ -33,6 +34,7 @@
     "symmetry_max_abs_error": 0.0,
     "scientific_runtime_seconds": 50.235,
     "estimated_cores": 8,
-    "actual_vcpus": 64
+    "provider_allocated_vcpus": 8,
+    "container_visible_logical_cpus": 64
   }
 }

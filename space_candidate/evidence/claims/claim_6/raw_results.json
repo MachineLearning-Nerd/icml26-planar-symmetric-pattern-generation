@@ -1,7 +1,7 @@
 {
   "status": "BLOCKED",
-  "source_run_id": "be3f0b80-0cad-420e-a04b-fbe56ce5c7e5",
-  "git_sha": "ccf8fe2598f08cf010ed20ea63e266a36b5641b4",
+  "source_run_id": "aa790329-76b1-48a3-a8e7-9e343d6440ba",
+  "git_sha": "16836d45429205ad3912c462bdec09a3cd0e4b64",
   "homogenization": {
     "status": "VERIFIED",
     "analytic_full_solid": 2.857142857142857,
@@ -16,7 +16,7 @@
   },
   "theorem_b9": {
     "status": "VERIFIED",
-    "certificate_sha256": "513b7939d79103097b4eeb09e2a15cd5d025f0dbd3c136a39c0d5b037220ee2c",
+    "certificate_sha256": "513b7939bd02df10b147f2743fe09d55dd34163d8a81d190df607c86bcfb2ee3",
     "proof_obligations": 9,
     "all_proof_obligations_pass": true,
     "all_tamper_controls_pass": true
@@ -43,12 +43,14 @@
     "maximum_released_native_cg_residual": 0.38017098997144205,
     "p1_as_p4mm_mismatch_control": 0.44160178303718567,
     "deterministic_p4mm_hash": "9c3503155e04cdac7226884ebe19da2d664e8702e4b40b64ab6a8a3706519759",
-    "scientific_runtime_seconds": 2529.991180382902,
-    "worker_runtime_seconds": [506.5526356459595, 2335.262383089168],
+    "scientific_runtime_seconds": 593.1547404350001,
+    "worker_runtime_seconds": [347.0969356379999, 526.1433451979999],
     "estimated_cores": 64,
-    "actual_vcpus": 64,
-    "paper_scale_ideal_worker_waves": 750,
-    "paper_scale_checked_lower_bound_days": 20.26963874122542,
-    "paper_scale_note": "Lower bound uses 12000 samples / 16 concurrent four-thread workers times the observed slowest checked worker; excludes provisioning, failures, and report generation."
+    "provider_allocated_vcpus": 8,
+    "container_visible_logical_cpus": 64,
+    "observed_concurrent_primary_workers": 12,
+    "paper_scale_ideal_worker_waves": 1000,
+    "paper_scale_checked_lower_bound_days": 6.089622050902776,
+    "paper_scale_note": "Lower bound uses 12000 samples / 12 primary workers observed concurrently in the accepted replay times the observed slowest primary worker; excludes provisioning, failures, and report generation. HF's catalog allocates 8 vCPUs even though the container exposed 64 logical CPUs."
   }
 }
