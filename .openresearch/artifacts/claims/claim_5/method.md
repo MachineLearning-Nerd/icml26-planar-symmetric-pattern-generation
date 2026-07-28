@@ -1,9 +1,11 @@
 # Claim 5 method
 
-Construct one 64x64 p4mm unit cell and tile it into the required 2x2,
-128x128 supercell. The positive design is a periodic cross network connected
-to Γ. The negative design contains four periodic square islands separated by
-low-conductivity material. Both are exactly D4-invariant and periodic.
+Construct one 96x96 p6mm unit cell and tile it into the required 2x2,
+192x192 supercell used by the released paper-cutting entrypoint. The positive
+design is a fully conducting p6mm sheet connected to Γ. The negative design
+contains four periodic hexagonal islands separated by low-conductivity
+material. Both are closed under the exact D6 action on the discrete oblique
+torus and are exactly periodic.
 
 Run the authors' `ObliqueElemVTM` Q1 finite-element solver at its pinned
 release commit. Independently recompute Equation 6 from nodal temperatures,

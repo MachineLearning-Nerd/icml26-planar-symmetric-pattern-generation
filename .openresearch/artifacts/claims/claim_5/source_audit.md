@@ -12,6 +12,9 @@ supercell and requires every connected component to meet the sink boundary.
 Appendix F.2 fixes Γ, the 128x128 Q1 mesh, q0 in [1e-8, 1e-4],
 conductivity in [1e-4, 1], SIMP penalty 5, p=20, and 2x2 Gauss quadrature.
 
-This experiment uses q0=1e-4 and all other stated fixed settings. It binds
-the released solver to upstream commit
+This robustness sibling uses the exact released paper-cutting entrypoint
+configuration: a=b=96, hence a 192x192 mesh, gamma=2π/3, phi=π/6, q0=1e-4,
+SIMP penalty 4, and p=20. The 192x192/SIMP=4 release differs from Appendix
+F.2's 128x128/SIMP=5 prose; the sibling experiment tests the latter. This
+experiment binds the released solver to upstream commit
 `b6a27efef00b80923ce9e6b66bb8847e83f289cf` by source-file hashes.

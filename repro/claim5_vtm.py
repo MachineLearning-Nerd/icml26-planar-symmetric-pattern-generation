@@ -1,9 +1,9 @@
 """Paper-native Virtual Temperature Method audit for Claim 5.
 
 The released solver is fetched from an immutable upstream commit and verified
-byte-for-byte before import.  The test uses the 128x128 mesh specified in
-Appendix F.2, formed by tiling a 64x64 p4mm unit cell into the required 2x2
-supercell.
+byte-for-byte before import.  This robustness sibling uses the exact 192x192,
+p6mm-lattice configuration in the released paper-cutting entrypoint. A 96x96
+p6mm unit cell is tiled into the required 2x2 supercell.
 """
 
 from __future__ import annotations
@@ -31,9 +31,9 @@ UPSTREAM_FILES = {
 PAPER_SOURCE_SHA256 = (
     "0d9de93e9af7441ac803837bf4bebceed7d890b015ea4c194bad5dd414921d55"
 )
-SIZE = 128
-UNIT = 64
-SINK_LENGTH = 64
+SIZE = 192
+UNIT = 96
+SINK_LENGTH = 96
 
 
 def _sha256(data: bytes) -> str:
@@ -73,10 +73,16 @@ def _load_pinned_solver():
 
 
 def _unit_designs() -> tuple[np.ndarray, np.ndarray]:
-    coordinates = np.arange(UNIT, dtype=float) - (UNIT - 1) / 2
-    yy, xx = np.meshgrid(coordinates, coordinates, indexing="ij")
-    island_material = (np.maximum(np.abs(xx), np.abs(yy)) <= 10.5)
-    connected_material = (np.abs(xx) <= 4.5) | (np.abs(yy) <= 4.5)
+    indices = np.arange(UNIT, dtype=int)
+    signed = (indices - UNIT // 2) % UNIT
+    signed = np.where(signed <= UNIT // 2, signed, signed - UNIT)
+    rr, qq = np.meshgrid(signed, signed, indexing="ij")
+    # Seed one compact component and close it under the exact D6 action on the
+    # discrete oblique torus. The positive control is the fully conducting
+    # p6mm sheet used to calibrate the released 192x192 entrypoint.
+    island_seed = (qq * qq + rr * rr - qq * rr) <= 14**2
+    island_material = _d6_closure(island_seed)
+    connected_material = np.ones_like(island_material, dtype=bool)
     island = np.where(island_material, 1.0, 0.05).astype(np.float32)
     connected = np.where(connected_material, 1.0, 0.05).astype(np.float32)
     return connected, island
@@ -86,19 +92,41 @@ def _tile_2x2(unit_cell: np.ndarray) -> np.ndarray:
     return np.tile(unit_cell, (2, 2))
 
 
+def _transform_oblique(unit: np.ndarray, matrix: np.ndarray) -> np.ndarray:
+    rows, columns = np.indices((UNIT, UNIT))
+    q = (columns - UNIT // 2) % UNIT
+    r = (rows - UNIT // 2) % UNIT
+    transformed_q = (matrix[0, 0] * q + matrix[0, 1] * r) % UNIT
+    transformed_r = (matrix[1, 0] * q + matrix[1, 1] * r) % UNIT
+    transformed = np.empty_like(unit)
+    transformed[
+        (transformed_r + UNIT // 2) % UNIT,
+        (transformed_q + UNIT // 2) % UNIT,
+    ] = unit[rows, columns]
+    return transformed
+
+
+def _d6_transforms(unit: np.ndarray) -> list[np.ndarray]:
+    rotation = np.array([[1, -1], [1, 0]], dtype=int)
+    reflection = np.array([[1, -1], [0, -1]], dtype=int)
+    transforms = []
+    power = np.eye(2, dtype=int)
+    for _ in range(6):
+        transforms.append(_transform_oblique(unit, power))
+        transforms.append(_transform_oblique(unit, reflection @ power))
+        power = rotation @ power
+    return transforms
+
+
+def _d6_closure(seed: np.ndarray) -> np.ndarray:
+    return np.logical_or.reduce(_d6_transforms(seed))
+
+
 def _symmetry_errors(density: np.ndarray) -> dict[str, float]:
     unit = density[:UNIT, :UNIT]
-    operations = [
-        np.rot90(unit, k=1),
-        np.rot90(unit, k=2),
-        np.rot90(unit, k=3),
-        np.flipud(unit),
-        np.fliplr(unit),
-        unit.T,
-        np.flipud(np.fliplr(unit.T)),
-    ]
+    operations = _d6_transforms(unit)
     return {
-        "p4mm_D4_max_abs_error": float(
+        "p6mm_D6_max_abs_error": float(
             max(np.max(np.abs(unit - transformed)) for transformed in operations)
         ),
         "translation_a_max_abs_error": float(
@@ -147,12 +175,12 @@ def _solver_kwargs() -> dict:
         "nely": SIZE,
         "a": UNIT,
         "b": UNIT,
-        "gamma": math.pi / 2,
-        "phi": 0.0,
+        "gamma": 2 * math.pi / 3,
+        "phi": math.pi / 6,
         "task": "cycle_ab",
         "q0": 1e-4,
         "k0": 1.0,
-        "penal": 5.0,
+        "penal": 4.0,
         "pp": 20,
         "device": torch.device("cpu"),
         "Eeps": 1e-4,
@@ -209,7 +237,11 @@ def _checker(
     def add(name: str, passed: bool, detail: object) -> None:
         checks.append({"name": name, "passed": bool(passed), "detail": detail})
 
-    add("paper_mesh_128x128", connected.shape == (128, 128), connected.shape)
+    add(
+        "released_entrypoint_mesh_192x192",
+        connected.shape == (192, 192),
+        connected.shape,
+    )
     add(
         "two_by_two_periodic_supercell",
         all(
@@ -224,9 +256,9 @@ def _checker(
         {"connected": connected_symmetry, "island": island_symmetry},
     )
     add(
-        "p4mm_symmetry_preserved",
-        connected_symmetry["p4mm_D4_max_abs_error"] == 0.0
-        and island_symmetry["p4mm_D4_max_abs_error"] == 0.0,
+        "p6mm_symmetry_preserved",
+        connected_symmetry["p6mm_D6_max_abs_error"] == 0.0
+        and island_symmetry["p6mm_D6_max_abs_error"] == 0.0,
         {"connected": connected_symmetry, "island": island_symmetry},
     )
     add(
@@ -285,7 +317,7 @@ def _checker(
 
 
 def verify_claim_5(config: dict) -> tuple[dict, dict]:
-    if config["stage"] != "claim5_vtm_128":
+    if config["stage"] != "claim5_vtm_192":
         raise RuntimeError(f"Unsupported Claim 5 stage: {config['stage']}")
     torch.set_num_threads(min(8, max(1, int(config["estimated_scientific_cores"]))))
     solver_class = _load_pinned_solver()
@@ -339,8 +371,9 @@ def verify_claim_5(config: dict) -> tuple[dict, dict]:
 
     broken_periodicity = island.copy()
     broken_periodicity[0, 0] = 1.0
-    broken_symmetry = island.copy()
-    broken_symmetry[13, 19] = 1.0
+    broken_symmetry_unit = island[:UNIT, :UNIT].copy()
+    broken_symmetry_unit[13, 19] = 1.0
+    broken_symmetry = _tile_2x2(broken_symmetry_unit)
     controls = {
         "disconnected_periodic_islands_fail_connectivity": {
             "passes": _unreachable_material_cells(island) > 0,
@@ -353,8 +386,8 @@ def verify_claim_5(config: dict) -> tuple[dict, dict]:
             > 0,
             "errors": _symmetry_errors(broken_periodicity),
         },
-        "single_pixel_p4mm_break_rejected": {
-            "passes": _symmetry_errors(broken_symmetry)["p4mm_D4_max_abs_error"]
+        "single_pixel_p6mm_break_rejected": {
+            "passes": _symmetry_errors(broken_symmetry)["p6mm_D6_max_abs_error"]
             > 0,
             "errors": _symmetry_errors(broken_symmetry),
         },
@@ -364,7 +397,7 @@ def verify_claim_5(config: dict) -> tuple[dict, dict]:
     result = {
         "status": "VERIFIED" if verdict else "BLOCKED",
         "source": "Section 6.2, Equation 6, Figure 4, Appendix E.3 and F.2",
-        "evidence_type": "paper-native 128x128 finite-element VTM with independent oracles",
+        "evidence_type": "released 192x192 finite-element VTM robustness replay with independent oracles",
         "paper_source_sha256": PAPER_SOURCE_SHA256,
         "official_release": {
             "repository": UPSTREAM_REPOSITORY,
@@ -372,14 +405,14 @@ def verify_claim_5(config: dict) -> tuple[dict, dict]:
             "files_sha256": UPSTREAM_FILES,
         },
         "configuration": {
-            "mesh": [128, 128],
-            "unit_cell": [64, 64],
+            "mesh": [192, 192],
+            "unit_cell": [96, 96],
             "supercell": "2x2",
-            "group": "p4mm",
+            "group": "p6mm",
             "sink_gamma": "{0}x[0,1) union [0,1)x{0}",
             "q0": 1e-4,
             "conductivity_range": [1e-4, 1.0],
-            "simp_penalty": 5.0,
+            "simp_penalty": 4.0,
             "p_norm": 20,
             "max_cg_iterations": 500,
         },
@@ -390,8 +423,11 @@ def verify_claim_5(config: dict) -> tuple[dict, dict]:
         "all_negative_controls_pass": all_controls,
         "limitations": (
             "This verifies the released VTM mechanism, its adjoint descent, "
-            "the paper-specified mesh, and the theorem premises on constructed "
-            "periodic p4mm designs. It does not reproduce diffusion-guided "
+            "the released entrypoint mesh, and the theorem premises on a fully "
+            "conducting p6mm control and constructed periodic p6mm islands. "
+            "The release's 192x192/SIMP=4 settings differ "
+            "from Appendix F.2's 128x128/SIMP=5 settings; that paper setting is "
+            "tested on the sibling experiment. This does not reproduce diffusion-guided "
             "image generation, fabricate a paper cutout, or establish that "
             "every optimizer trajectory reaches a connected design."
         ),

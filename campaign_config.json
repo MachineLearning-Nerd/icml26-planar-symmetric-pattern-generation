@@ -1,8 +1,8 @@
 {
-  "stage": "claim5_vtm_128",
+  "stage": "claim5_vtm_192",
   "seed": 20260728,
   "estimated_scientific_cores": 8,
   "selected_backend": "hf",
   "selected_flavor": "cpu-upgrade",
-  "reason": "The released 128x128 sparse finite-element VTM solve, multigrid preconditioner, adjoint, and independent replay have uncertain runtime and can use several CPU cores."
+  "reason": "The released paper-cutting entrypoint's 192x192 sparse finite-element VTM solve, multigrid preconditioner, adjoint, and independent replay have uncertain runtime and can use several CPU cores."
 }
