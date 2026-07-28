@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+"""Fixed campaign entrypoint.
+
+Experiment branches change campaign_config.json and add claim modules.  The
+OpenResearch run command stays ``uv run --frozen python reproduce.py``.
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import platform
+import sys
+import time
+from pathlib import Path
+
+from repro.baseline import run_baseline
+
+
+ROOT = Path(__file__).resolve().parent
+
+
+def cpu_allocation() -> int:
+    if hasattr(os, "sched_getaffinity"):
+        return len(os.sched_getaffinity(0))
+    return os.cpu_count() or 1
+
+
+def main() -> int:
+    started = time.perf_counter()
+    config = json.loads((ROOT / "campaign_config.json").read_text())
+    report = {
+        "environment": {
+            "python": platform.python_version(),
+            "platform": platform.platform(),
+            "estimated_scientific_cores": config["estimated_scientific_cores"],
+            "selected_backend": config["selected_backend"],
+            "selected_flavor": config["selected_flavor"],
+            "actual_cpu_allocation": cpu_allocation(),
+            "seed": config["seed"],
+        },
+        "stage": config["stage"],
+        "claims": {},
+    }
+    baseline = run_baseline(config["seed"])
+    report["claims"].update(baseline["claims"])
+    report["negative_controls"] = baseline["negative_controls"]
+    report["runtime_seconds"] = time.perf_counter() - started
+    report["release_gate"] = {
+        "previously_full_credit_regression_pass": all(
+            report["claims"][key]["status"] == "VERIFIED"
+            for key in ("claim_1", "claim_3", "claim_4")
+        ),
+        "baseline_judged_score": "8/12",
+        "score_change_claimed": False,
+    }
+    output = ROOT / ".openresearch" / "artifacts" / "baseline" / "raw_results.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+    print("=== OPENRESEARCH_EVIDENCE_JSON_BEGIN ===")
+    print(json.dumps(report, indent=2, sort_keys=True))
+    print("=== OPENRESEARCH_EVIDENCE_JSON_END ===")
+    ok = report["release_gate"]["previously_full_credit_regression_pass"]
+    if not ok:
+        print("REGRESSION FAILURE: a previously full-credit claim did not pass", file=sys.stderr)
+    return 0 if ok else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
