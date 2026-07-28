@@ -17,6 +17,7 @@ from pathlib import Path
 from repro.baseline import run_baseline
 from repro.claim2_proof import verify_claim_2
 from repro.claim5_vtm import verify_claim_5
+from repro.claim6_mechanics import verify_claim_6_mechanics
 
 
 ROOT = Path(__file__).resolve().parent
@@ -51,11 +52,21 @@ def main() -> int:
         claim_2, claim_2_controls = verify_claim_2()
         report["claims"]["claim_2"] = claim_2
         report["negative_controls"]["claim_2_proof_certificate"] = claim_2_controls
-    if config["stage"].startswith("claim5_vtm"):
+    if config["stage"].startswith(("claim5_vtm", "claim6_")):
         claim_5, claim_5_controls = verify_claim_5(config)
         report["claims"]["claim_5"] = claim_5
         report["negative_controls"]["claim_5_vtm"] = claim_5_controls
+    if config["stage"].startswith("claim6_"):
+        claim_6, claim_6_controls = verify_claim_6_mechanics(config)
+        report["claims"]["claim_6"] = claim_6
+        report["negative_controls"]["claim_6_mechanics"] = claim_6_controls
     report["runtime_seconds"] = time.perf_counter() - started
+    required_claims = ["claim_1", "claim_2", "claim_3", "claim_4", "claim_5"]
+    if config["stage"] == "claim6_complete":
+        required_claims.append("claim_6")
+    current_claims_pass = all(
+        report["claims"][key]["status"] == "VERIFIED" for key in required_claims
+    )
     report["release_gate"] = {
         "previously_full_credit_regression_pass": all(
             report["claims"][key]["status"] == "VERIFIED"
@@ -63,6 +74,8 @@ def main() -> int:
         ),
         "baseline_judged_score": "8/12",
         "score_change_claimed": False,
+        "current_required_claims": required_claims,
+        "current_claims_pass": current_claims_pass,
     }
     output = ROOT / ".openresearch" / "artifacts" / "baseline" / "raw_results.json"
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -70,11 +83,6 @@ def main() -> int:
     print("=== OPENRESEARCH_EVIDENCE_JSON_BEGIN ===")
     print(json.dumps(report, indent=2, sort_keys=True))
     print("=== OPENRESEARCH_EVIDENCE_JSON_END ===")
-    current_claims_pass = all(
-        report["claims"][key]["status"] == "VERIFIED"
-        for key in ("claim_1", "claim_2", "claim_3", "claim_4", "claim_5")
-    )
-    report["release_gate"]["current_claims_pass"] = current_claims_pass
     ok = (
         report["release_gate"]["previously_full_credit_regression_pass"]
         and current_claims_pass

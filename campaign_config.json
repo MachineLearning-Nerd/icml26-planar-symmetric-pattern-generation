@@ -1,8 +1,8 @@
 {
-  "stage": "claim5_vtm_128",
+  "stage": "claim6_mechanics",
   "seed": 20260728,
-  "estimated_scientific_cores": 8,
+  "estimated_scientific_cores": 16,
   "selected_backend": "hf",
   "selected_flavor": "cpu-upgrade",
-  "reason": "The released 128x128 sparse finite-element VTM solve, multigrid preconditioner, adjoint, and independent replay have uncertain runtime and can use several CPU cores."
+  "reason": "Cumulative VTM plus repeated 64x64 and 128x128 three-load-case homogenization solves, multigrid preconditioners, adjoint, finite-difference, and mesh-convergence checks have uncertain runtime and can use several CPU cores."
 }

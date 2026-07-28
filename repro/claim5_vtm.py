@@ -285,7 +285,9 @@ def _checker(
 
 
 def verify_claim_5(config: dict) -> tuple[dict, dict]:
-    if config["stage"] != "claim5_vtm_128":
+    if config["stage"] != "claim5_vtm_128" and not config["stage"].startswith(
+        "claim6_"
+    ):
         raise RuntimeError(f"Unsupported Claim 5 stage: {config['stage']}")
     torch.set_num_threads(min(8, max(1, int(config["estimated_scientific_cores"]))))
     solver_class = _load_pinned_solver()

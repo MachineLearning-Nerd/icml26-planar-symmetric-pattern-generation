@@ -1,0 +1,48 @@
+{
+  "source_sha256": "0d9de93e9af7441ac803837bf4bebceed7d890b015ea4c194bad5dd414921d55",
+  "quantifiers": [
+    "for n in {2,3}",
+    "for every crystallographic group G in R^n",
+    "there exist an affine reflection group W and S in GL(n,R)",
+    "such that S G S^{-1} is a subgroup of W"
+  ],
+  "steps": [
+    {"id": "finite_point_group", "depends_on": []},
+    {"id": "invariant_lattice", "depends_on": ["finite_point_group"]},
+    {"id": "maximal_integral_reduction", "depends_on": ["invariant_lattice"]},
+    {"id": "complete_n2_classification", "depends_on": ["maximal_integral_reduction"]},
+    {"id": "complete_n3_classification", "depends_on": ["maximal_integral_reduction"]},
+    {"id": "dual_lattice_conjugacy", "depends_on": ["complete_n3_classification"]},
+    {"id": "weyl_lattice_coverage", "depends_on": ["complete_n2_classification", "dual_lattice_conjugacy"]},
+    {"id": "affine_lift", "depends_on": ["weyl_lattice_coverage"]}
+  ],
+  "maximal_integral_classes": {
+    "n2": [
+      {"weyl_type": "B2", "order": 8, "planar_representative": "p4mm"},
+      {"weyl_type": "G2", "order": 12, "planar_representative": "p6mm"}
+    ],
+    "n3": [
+      {"space_group": "Pm-3m", "order": 48, "covered_by": "B3 root"},
+      {"space_group": "Im-3m", "order": 48, "covered_by": "C3 root"},
+      {"space_group": "Fm-3m", "order": 48, "covered_by": "dual via Lemma B.7"}
+    ]
+  },
+  "dual_conjugacy": {
+    "construction": "S = |P(G)|^{-1} sum_A M_A^T M_A",
+    "average_over_finite_group": true,
+    "positive_definite": true,
+    "rational": true,
+    "invertible": true
+  },
+  "affine_lift": {
+    "point_group_inclusion_plus_integer_translation_lattice": true,
+    "uses_theorem_b6_equivalence": true
+  },
+  "classification_sources": [
+    "Lorenz (2005), Table 1.1 and Proposition 1.1",
+    "Tahara (1971), finite subgroups of GL(3,Z)",
+    "Kim (2001), duality of three-dimensional crystallographic groups",
+    "Bourbaki (2002), Weyl group orders"
+  ],
+  "noncircularity": "The universal quantifier is discharged by the complete maximal-class reduction and affine lift, not inferred from sampled groups or fitted numerical tolerances."
+}
