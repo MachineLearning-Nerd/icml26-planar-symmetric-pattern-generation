@@ -127,10 +127,10 @@ one local core for under five minutes.
 
 Important experiment branches:
 
-- [`orx/claim-2-symbolic-density-certificate`](https://github.com/MachineLearning-Nerd/icml26-repro-nbU2LNYdZN-planar-symmetric-pattern-generation/tree/orx/claim-2-symbolic-density-certificate)
-- [`orx/claim-5-paper-128-vtm`](https://github.com/MachineLearning-Nerd/icml26-repro-nbU2LNYdZN-planar-symmetric-pattern-generation/tree/orx/claim-5-paper-128-vtm)
-- [`orx/claim-6-homogenization-mechanics`](https://github.com/MachineLearning-Nerd/icml26-repro-nbU2LNYdZN-planar-symmetric-pattern-generation/tree/orx/claim-6-homogenization-mechanics)
-- [`orx/claim-6-zero-shot-source-faithful-verifier`](https://github.com/MachineLearning-Nerd/icml26-repro-nbU2LNYdZN-planar-symmetric-pattern-generation/tree/orx/claim-6-zero-shot-source-faithful-verifier)
+- [`audit/c2-universal-approximation`](https://github.com/MachineLearning-Nerd/icml26-planar-symmetric-pattern-generation/tree/audit/c2-universal-approximation)
+- [`audit/c5-vtm-128`](https://github.com/MachineLearning-Nerd/icml26-planar-symmetric-pattern-generation/tree/audit/c5-vtm-128)
+- [`audit/c6-mechanics-b9`](https://github.com/MachineLearning-Nerd/icml26-planar-symmetric-pattern-generation/tree/audit/c6-mechanics-b9)
+- [`audit/c6-zero-shot-scope`](https://github.com/MachineLearning-Nerd/icml26-planar-symmetric-pattern-generation/tree/audit/c6-zero-shot-scope)
 
 The failed parent zero-shot verifier is retained only to document why its
 unreported 10× disconnected-square threshold was rejected. It is not the
