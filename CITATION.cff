@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+title: "Planar Symmetric Pattern Generation"
+message: "If you use the paper, please cite the authors. If you use this reproduction audit, cite this repository as well."
+type: article
+authors:
+  - family-names: Lin
+    given-names: Ning
+  - family-names: Chen
+    given-names: Luxi
+  - family-names: Chen
+    given-names: Huaguan
+  - family-names: Cen
+    given-names: Jiacheng
+  - family-names: Li
+    given-names: Chongxuan
+  - family-names: Huang
+    given-names: Wenbing
+  - family-names: Sun
+    given-names: Hao
+year: 2026
+url: https://arxiv.org/abs/2606.02073
+repository-code: https://github.com/MachineLearning-Nerd/icml26-planar-symmetric-pattern-generation
+preferred-citation:
+  type: article
+  title: "Planar Symmetric Pattern Generation"
+  authors:
+    - family-names: Lin
+      given-names: Ning
+    - family-names: Chen
+      given-names: Luxi
+    - family-names: Chen
+      given-names: Huaguan
+    - family-names: Cen
+      given-names: Jiacheng
+    - family-names: Li
+      given-names: Chongxuan
+    - family-names: Huang
+      given-names: Wenbing
+    - family-names: Sun
+      given-names: Hao
+  year: 2026
+  url: https://arxiv.org/abs/2606.02073

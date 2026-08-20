@@ -6,6 +6,14 @@ Independent claim-by-claim reproduction audit for [arXiv:2606.02073](https://arx
 
 The repository was renamed from `icml26-repro-nbU2LNYdZN-planar-symmetric-pattern-generation` to `icml26-planar-symmetric-pattern-generation` so the public URL describes the paper rather than the challenge identifier.
 
+## Audit status
+
+`PARTIAL_C1_C5_VERIFIED_C6_BLOCKED_MECHANICS_B9_ZERO_SHOT_MECHANISM_VERIFIED_HISTORICAL_SCORE_8_OF_12_NO_CURRENT_SCORE`
+
+Claims 1–5 are verified within the finite or symbolic scopes documented below. Claim 6 has verified homogenization, Theorem B.9, and zero-shot mechanism checks, but remains blocked for the paper-scale zero-shot quantifier: the audit ran one sample per group while the paper reports 1,000. The historical 8/12 judge result is preserved; the 10–12/12 values are forecasts only. There is no current judge score claim and no author endorsement claim.
+
+The maintained dossier is [`STATUS.md`](STATUS.md), with claim production paths in [`CLAIM_EVIDENCE.md`](CLAIM_EVIDENCE.md), source pins in [`SOURCE_AUDIT.md`](SOURCE_AUDIT.md), environment details in [`ENVIRONMENT.md`](ENVIRONMENT.md), and a machine-checkable final audit in [`verify_final.py`](verify_final.py).
+
 ## What the paper does
 
 The paper proposes a symmetrization framework for arbitrary planar groups. It transforms a continuous 2D representation into one that respects a selected planar symmetry while preserving continuity, develops an approximation argument for symmetric functions, and applies the construction to visual and material-design tasks.
@@ -129,6 +137,6 @@ Thank you to Ning Lin, Luxi Chen, Huaguan Chen, Jiacheng Cen, Chongxuan Li, Wenb
 
 Repository maintenance commits in the cleaned branch histories use:
 
-`MachineLearning-Nerd <37579156+MachineLearning-Nerd@users.noreply.github.com>`
+`MachineLearning-Nerd <MachineLearning-Nerd@users.noreply.github.com>`
 
 The paper and its authors remain the source of the research claims; this repository contains an independent reproduction and audit record.

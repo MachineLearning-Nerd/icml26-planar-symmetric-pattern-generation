@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "repository": "MachineLearning-Nerd/icml26-planar-symmetric-pattern-generation",
+  "old_repository": "MachineLearning-Nerd/icml26-repro-nbU2LNYdZN-planar-symmetric-pattern-generation",
+  "paper": "2606.02073v1",
+  "overall_status": "PARTIAL_C1_C5_VERIFIED_C6_BLOCKED_MECHANICS_B9_ZERO_SHOT_MECHANISM_VERIFIED_HISTORICAL_SCORE_8_OF_12_NO_CURRENT_SCORE",
+  "canonical_identity": "MachineLearning-Nerd <MachineLearning-Nerd@users.noreply.github.com>",
+  "expected_branches": [
+    "audit/c2-universal-approximation",
+    "audit/c5-vtm-128",
+    "audit/c5-vtm-192",
+    "audit/c6-mechanics-b9",
+    "audit/c6-zero-shot-scope",
+    "audit/provider-cpu-metadata",
+    "historical/c6-first-12-control",
+    "historical/judged-baseline",
+    "main",
+    "release/canonical-upload-fix",
+    "release/evaluator-candidate"
+  ],
+  "branch_count_expected": 11,
+  "reachable_commit_count_expected": 27,
+  "recovery_bundle": {
+    "path": "/tmp/icml-planar-before-normalization.B9KyXX/icml-planar-before-normalization.bundle",
+    "sha256": "4dc52f4cbdf0a6e6049dc7268862db08d0766478c312c5c65892f039dc00dbf7"
+  },
+  "historical_score": "8/12",
+  "current_score_claim": false,
+  "publication_allowed": false,
+  "fresh_clone_verifier_expected": "FINAL_AUDIT=VERIFIED branches=11 commits=27 claims=C1:C5_scoped_verified,C6_blocked_paper_scale historical_score=8/12 current_score_claim=false publication_allowed=false"
+}

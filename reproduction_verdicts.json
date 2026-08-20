@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "overall_status": "PARTIAL_C1_C5_VERIFIED_C6_BLOCKED_MECHANICS_B9_ZERO_SHOT_MECHANISM_VERIFIED_HISTORICAL_SCORE_8_OF_12_NO_CURRENT_SCORE",
+  "claim_statuses": {
+    "C1": "VERIFIED_SCOPED_HIGH",
+    "C2": "VERIFIED_SCOPED_MEDIUM",
+    "C3": "VERIFIED_SCOPED_HIGH",
+    "C4": "VERIFIED_SCOPED_HIGH",
+    "C5": "VERIFIED_SCOPED_HIGH",
+    "C6": "BLOCKED_PAPER_SCALE"
+  },
+  "historical_external_results": {
+    "baseline": {
+      "score": "8/12",
+      "source": "space_candidate/evidence/release_report.md",
+      "current_score_claim": false
+    },
+    "forecast": {
+      "range": "10-12/12",
+      "is_judge_result": false,
+      "current_score_claim": false
+    }
+  },
+  "publication": {
+    "publication_allowed": false,
+    "author_endorsement_claimed": false,
+    "current_score_claim": false,
+    "reason": "Claim 6 remains blocked at the paper-scale sampling quantifier."
+  },
+  "scientific_verifier": {
+    "path": "verify_release.py",
+    "expected_output": "RELEASE_EVIDENCE_VERIFIED: claims 1-5 VERIFIED; claim 6 BLOCKED"
+  }
+}

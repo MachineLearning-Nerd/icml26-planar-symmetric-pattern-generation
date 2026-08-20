@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "required_paths": [
+    "README.md",
+    "STATUS.md",
+    "CLAIM_EVIDENCE.md",
+    "SOURCE_AUDIT.md",
+    "ENVIRONMENT.md",
+    "REPORT.md",
+    "AUTHOR_THANK_YOU.md",
+    "CITATION.cff",
+    "claims.json",
+    "reproduction_verdicts.json",
+    "verify_final.py",
+    "verify_release.py",
+    ".openresearch/source/source_pin.json",
+    ".openresearch/artifacts/claims/claim_1/raw_results.json",
+    ".openresearch/artifacts/claims/claim_2/raw_results.json",
+    ".openresearch/artifacts/claims/claim_3/raw_results.json",
+    ".openresearch/artifacts/claims/claim_4/raw_results.json",
+    ".openresearch/artifacts/claims/claim_5/raw_results.json",
+    ".openresearch/artifacts/claims/claim_6/raw_results.json",
+    "space_candidate/evidence/evaluator_blind_review.json",
+    "space_candidate/evidence/protected_subset_report.json",
+    "space_candidate/evidence/visibility_matrix.json",
+    "space_candidate/evidence/release_report.md",
+    "space_candidate/evidence/claims/claim_6/zero_shot_rows.json"
+  ],
+  "source": {
+    "arxiv": "2606.02073",
+    "revision": "2606.02073v1",
+    "sha256": "0d9de93e9af7441ac803837bf4bebceed7d890b015ea4c194bad5dd414921d55"
+  },
+  "artifacts": [
+    {"path": ".openresearch/source/source_pin.json", "sha256": "985c11327ae0bb9390f07ed4c80031b9c538848af2020a09368d6d00ca2b324a"},
+    {"path": ".openresearch/artifacts/claims/claim_1/raw_results.json", "sha256": "cb0f0255571d5b26a856a4a398712342ca4d60bbff33809c240fa62ba8063849"},
+    {"path": ".openresearch/artifacts/claims/claim_2/raw_results.json", "sha256": "fd076d238606c371b10c9a45387d9bf1b9a99bcd930f3fef1ec2164c340e6510"},
+    {"path": ".openresearch/artifacts/claims/claim_3/raw_results.json", "sha256": "be7ad0b714decaa44aeef1981046cd82db5ab31ae1a54520a51979f1ab515148"},
+    {"path": ".openresearch/artifacts/claims/claim_4/raw_results.json", "sha256": "91d6a51361da60a674a5d5c96e609dfb34828a6ae5dacc8c69abf8a7acd71fb9"},
+    {"path": ".openresearch/artifacts/claims/claim_5/raw_results.json", "sha256": "b51e7748f398242c10e36d54994c7347bc0cbfe90ccc00ad9b76a7dc7aacb18f"},
+    {"path": ".openresearch/artifacts/claims/claim_6/raw_results.json", "sha256": "df73058d1697cf1650ba551df47a80d61248725fc507e5bc62aa0a8968d55d4a"},
+    {"path": "space_candidate/evidence/evaluator_blind_review.json", "sha256": "19646b44bda2eb490cbec95c039e1c05adcd4571da412cb0e76f5850210a4404"},
+    {"path": "space_candidate/evidence/protected_subset_report.json", "sha256": "6116c2219c00846ee7225dfa358b1c9429ea4847a2016042f58602cb575e4eb8"},
+    {"path": "space_candidate/evidence/visibility_matrix.json", "sha256": "a159288c33121f503db1a0bff3d991c958f924bfba9ba81fcfc5747c0ba6a10a"},
+    {"path": "space_candidate/evidence/release_report.md", "sha256": "e3f74de92788d5df4f219a75703e2580a93aadce9e3d7372e914bd23292fe664"},
+    {"path": "space_candidate/evidence/claims/claim_6/zero_shot_rows.json", "sha256": "cdeaea59db14e0c1dfb1c94339e42c58f48d485423b93edba5b6a148a4eb6c9b"}
+  ],
+  "historical_protections": {
+    "protected_subset_report": "space_candidate/evidence/protected_subset_report.json",
+    "historical_judged_score": "8/12",
+    "forecast_is_not_judge_result": true
+  }
+}

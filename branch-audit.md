@@ -34,7 +34,7 @@ The repository was renamed from `icml26-repro-nbU2LNYdZN-planar-symmetric-patter
 
 ## Attribution and verification policy
 
-- Clean maintenance commits use `MachineLearning-Nerd <37579156+MachineLearning-Nerd@users.noreply.github.com>`.
+- Clean maintenance commits use `MachineLearning-Nerd <MachineLearning-Nerd@users.noreply.github.com>`.
 - Branch cleanup changes labels and links, not the scientific evidence or its limitations.
 - The rejected zero-shot control is historical; it is not the current verifier.
 - Claim 6 remains blocked until the paper-scale sampling quantifier is actually run or formally narrowed.

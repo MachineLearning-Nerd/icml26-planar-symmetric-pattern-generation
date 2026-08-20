@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "paper": {
+    "title": "Planar Symmetric Pattern Generation",
+    "arxiv": "2606.02073",
+    "revision": "2606.02073v1",
+    "authors": [
+      "Ning Lin",
+      "Luxi Chen",
+      "Huaguan Chen",
+      "Jiacheng Cen",
+      "Chongxuan Li",
+      "Wenbing Huang",
+      "Hao Sun"
+    ]
+  },
+  "overall_status": "PARTIAL_C1_C5_VERIFIED_C6_BLOCKED_MECHANICS_B9_ZERO_SHOT_MECHANISM_VERIFIED_HISTORICAL_SCORE_8_OF_12_NO_CURRENT_SCORE",
+  "claims": [
+    {
+      "id": "C1",
+      "paper_anchor": "Theorem 3.2",
+      "producer": "repro/baseline.py",
+      "status": "VERIFIED_SCOPED_HIGH",
+      "evidence": "All 17 paper-listed planar groups pass subgroup and conjugation-recovery checks.",
+      "control": "The rejected p6<D4 control remains negative.",
+      "boundary": "Finite catalogue regression evidence, not proof-assistant formalization."
+    },
+    {
+      "id": "C2",
+      "paper_anchor": "Theorem 3.3 and Appendix C.4",
+      "producer": "repro/claim2_proof.py",
+      "status": "VERIFIED_SCOPED_MEDIUM",
+      "evidence": "Eleven proof obligations pass, including quantifier order, compact-domain density, Reynolds contraction, module decomposition, and a strict L1 budget.",
+      "control": "Three independent tamper controls pass.",
+      "boundary": "Independent symbolic certificate, not a Lean/Coq proof-kernel artifact."
+    },
+    {
+      "id": "C3",
+      "paper_anchor": "Equation 3",
+      "producer": "repro/baseline.py",
+      "status": "VERIFIED_SCOPED_HIGH",
+      "evidence": "All 17 groups pass with maximum invariance error 5.342948306008566e-16.",
+      "control": "The non-invariant coefficient control fails as intended.",
+      "boundary": "Numerical finite-group check."
+    },
+    {
+      "id": "C4",
+      "paper_anchor": "Algorithm 1 and Section 6.1",
+      "producer": "repro/baseline.py",
+      "status": "VERIFIED_SCOPED_HIGH",
+      "evidence": "All 17 groups pass with maximum symmetry error 1.6237011735142914e-15.",
+      "control": "The no-projection mutation fails as intended.",
+      "boundary": "Symmetry contract only; not image-aesthetic or prompt-adherence evaluation."
+    },
+    {
+      "id": "C5",
+      "paper_anchor": "Equation 6, Figure 4, Appendix E.3/F.2",
+      "producer": "repro/claim5_vtm.py",
+      "status": "VERIFIED_SCOPED_HIGH",
+      "evidence": "Paper-native 128x128 p4mm and released 192x192 p6mm configurations pass score, residual, symmetry, and flood-fill checks.",
+      "control": "Connected-versus-island VTM separation and negative controls pass.",
+      "boundary": "Connectivity mechanism evidence; not SDXL generation or fabrication validation."
+    },
+    {
+      "id": "C6",
+      "paper_anchor": "Equation 8, Figure 8, Section 6.4, Theorem B.9",
+      "producer": "repro/claim6_mechanics.py and repro/claim6_zeroshot.py",
+      "status": "BLOCKED_PAPER_SCALE",
+      "evidence": "Homogenization, adjoints, 9/9 B.9 obligations, and the first-12-group mechanism replay pass.",
+      "control": "The p1-as-p4mm and native-CG controls are retained.",
+      "boundary": "One sample per group was checked; the paper quantifier is 1,000 samples per group."
+    }
+  ]
+}
